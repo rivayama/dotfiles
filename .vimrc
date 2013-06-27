@@ -37,7 +37,9 @@ set fileformat=unix
 autocmd FileType html set indentexpr&
 autocmd FileType xhtml set indentexpr&
 
+"----------------------------
 " GUI Setting
+"----------------------------
 if has('gui_running')
 
   " Color Scheme
@@ -70,6 +72,13 @@ if has('gui_running')
 
 endif
 
-" Key-mapping for open and load .vimrc
+"----------------------------
+" Key-mapping
+"----------------------------
+" Open and reload .vimrc
 nnoremap <Space>ev :<C-u>split $MYVIMRC<CR>
 nnoremap <Space>rv :<C-u>source $MYVIMRC<CR>
+
+"----------------------------
+" Plugin
+"----------------------------
