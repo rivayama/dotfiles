@@ -78,7 +78,3 @@ endif
 " Open and reload .vimrc
 nnoremap <Space>ev :<C-u>split $MYVIMRC<CR>
 nnoremap <Space>rv :<C-u>source $MYVIMRC<CR>
-
-"----------------------------
-" Plugin
-"----------------------------
