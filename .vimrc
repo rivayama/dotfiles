@@ -21,9 +21,9 @@ set fdm=marker
 
 " Tab Setting
 set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 
 " File Encoding
 set fileencodings=utf-8,cp932,euc-jp
