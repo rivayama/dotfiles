@@ -3,6 +3,12 @@ syntax on
 " Unset beep
 set visualbell t_vb=
 
+" Set Highlight Search
+set hlsearch
+
+" Set Backspace
+set backspace=indent,eol,start
+
 " Display Tab and Line end
 set list
 set listchars=eol:$,tab:>-
