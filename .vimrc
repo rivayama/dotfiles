@@ -75,6 +75,13 @@ endif
 "----------------------------
 " Key-mapping
 "----------------------------
-" Open and reload .vimrc
-nnoremap <Space>ev :<C-u>split $MYVIMRC<CR>
-nnoremap <Space>rv :<C-u>source $MYVIMRC<CR>
+" Open and reload .vimrc or _gvimrc
+if has('gui_running')
+  nnoremap <Space>ev :<C-u>split $MYGVIMRC<CR>
+  nnoremap <Space>rv :<C-u>source $MYGVIMRC<CR>
+
+else
+  nnoremap <Space>ev :<C-u>split $MYVIMRC<CR>
+  nnoremap <Space>rv :<C-u>source $MYVIMRC<CR>
+
+endif
