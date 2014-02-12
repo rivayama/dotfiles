@@ -26,7 +26,7 @@ set ignorecase
 set fdm=marker
 
 " Tab Setting
-set expandtab
+set noexpandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
