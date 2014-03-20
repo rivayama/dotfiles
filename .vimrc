@@ -79,6 +79,11 @@ if has('gui_running')
 endif
 
 "----------------------------
+" Plugius
+"----------------------------
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+"----------------------------
 " Key-mapping
 "----------------------------
 " Open and reload .vimrc or _gvimrc

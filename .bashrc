@@ -12,4 +12,4 @@ eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-export LC_ALL=C
+# export LC_ALL=C
