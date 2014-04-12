@@ -79,6 +79,20 @@ if has('gui_running')
 endif
 
 "----------------------------
+" Mac GUI Setting
+"----------------------------
+if has('gui_macvim')
+
+  " Color scheme
+  colorscheme macvim
+
+  " Font
+  set guifont=Osaka:h14
+
+end
+
+
+"----------------------------
 " Plugius
 "----------------------------
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -87,7 +101,11 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 " Key-mapping
 "----------------------------
 " Open and reload .vimrc or _gvimrc
-if has('gui_running')
+if has('gui_macvim')
+  nnoremap <Space>ev :<C-u>split $MYVIMRC<CR>
+  nnoremap <Space>rv :<C-u>source $MYVIMRC<CR>
+
+elseif has('gui_running')
   nnoremap <Space>ev :<C-u>split $MYGVIMRC<CR>
   nnoremap <Space>rv :<C-u>source $MYGVIMRC<CR>
 
