@@ -47,9 +47,9 @@ autocmd FileType xhtml set indentexpr&
 set clipboard+=unnamed
 
 "----------------------------
-" GUI Setting
+" Win GUI Setting
 "----------------------------
-if has('gui_running')
+if has('win32') && has('gui_running')
 
   " Color Scheme
   colorscheme molokai
@@ -79,20 +79,6 @@ if has('gui_running')
 endif
 
 "----------------------------
-" Mac GUI Setting
-"----------------------------
-if has('gui_macvim')
-
-  " Color scheme
-  colorscheme macvim
-
-  " Font
-  set guifont=Osaka:h14
-
-end
-
-
-"----------------------------
 " Plugius
 "----------------------------
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -101,11 +87,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 " Key-mapping
 "----------------------------
 " Open and reload .vimrc or _gvimrc
-if has('gui_macvim')
-  nnoremap <Space>ev :<C-u>split $MYVIMRC<CR>
-  nnoremap <Space>rv :<C-u>source $MYVIMRC<CR>
-
-elseif has('gui_running')
+if has('gui_running')
   nnoremap <Space>ev :<C-u>split $MYGVIMRC<CR>
   nnoremap <Space>rv :<C-u>source $MYGVIMRC<CR>
 
@@ -115,7 +97,9 @@ else
 
 endif
 
+"----------------------------
 " Command-line mode keymappings:
+"----------------------------
 " <C-a>, A: move to head
 cnoremap <C-a> <Home>
 " <C-e>, E: move to end
