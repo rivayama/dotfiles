@@ -1,3 +1,4 @@
+" Enable Syntax
 syntax on
 
 " Unset beep
