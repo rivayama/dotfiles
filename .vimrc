@@ -43,6 +43,9 @@ set fileformat=unix
 autocmd FileType html set indentexpr&
 autocmd FileType xhtml set indentexpr&
 
+" Yank to Clipboard
+set clipboard+=unnamed
+
 "----------------------------
 " GUI Setting
 "----------------------------
@@ -72,9 +75,6 @@ if has('gui_running')
   " No Swap, No Backup
   set noswapfile
   set nobackup
-
-  " Yank to Clipboard
-  set clipboard+=unnamed
 
 endif
 
