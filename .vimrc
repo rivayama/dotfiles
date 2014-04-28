@@ -47,6 +47,11 @@ autocmd FileType xhtml set indentexpr&
 " Yank to Clipboard
 set clipboard+=unnamed
 
+" For Go Lang
+if $GOROOT != ''
+  set rtp+=$GOROOT/misc/vim
+endif
+
 "----------------------------
 " Win GUI Setting
 "----------------------------
@@ -120,4 +125,3 @@ cnoremap <C-k> <C-\>e getcmdpos() == 1 ?
       \ '' : getcmdline()[:getcmdpos()-2]<CR>
 " <C-y>: paste
 cnoremap <C-y> <C-r>"
-
