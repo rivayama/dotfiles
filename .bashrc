@@ -7,9 +7,4 @@ fi
 
 # User specific aliases and functions
 alias vi='vim'
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-# export LC_ALL=C
+alias ls='ls -G'
