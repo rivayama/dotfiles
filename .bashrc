@@ -15,3 +15,8 @@ if [ -x "`which go`" ]; then
 	export GOPATH=$HOME/_go
 	export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 fi
+
+# For rbenv
+if [ -x "`which rbenv`" ]; then
+	eval "$(rbenv init -)"
+fi
