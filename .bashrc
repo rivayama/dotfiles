@@ -10,13 +10,13 @@ alias vi='vim'
 alias ls='ls -G'
 
 # For Go Lang
-if [ -x "`which go`" ]; then
+if [ -x "`which go 2> /dev/null`" ]; then
 	export GOROOT=`go env GOROOT`
 	export GOPATH=$HOME/_go
 	export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 fi
 
 # For rbenv
-if [ -x "`which rbenv`" ]; then
+if [ -x "`which rbenv 2> /dev/null`" ]; then
 	eval "$(rbenv init -)"
 fi
