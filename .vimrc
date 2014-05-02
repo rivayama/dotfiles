@@ -90,23 +90,21 @@ endif
 "----------------------------
 " Plugius
 "----------------------------
-set runtimepath+=~/.vim/bundle/neobundle.vim/
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
-
+filetype off
+ 
+set rtp+=~/.vim/vundle.git/
+call vundle#rc()
+ 
 " Vim-Fugative
-NeoBundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-fugitive'
 
 " Vim-Quickrun
-NeoBundle 'thinca/vim-quickrun'
+Bundle 'thinca/vim-quickrun'
 set splitright
 let g:quickrun_config = {"_" : {"split": 'vertical'}}
 let g:quickrun_config = {"_" : {"outputter/buffer/close_on_empty": 1}}
 nnoremap <Space>qr :<C-u>QuickRun<CR>
 
-call neobundle#end()
 filetype plugin indent on
 
 "----------------------------
