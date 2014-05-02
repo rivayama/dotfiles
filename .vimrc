@@ -87,23 +87,12 @@ endif
 "----------------------------
 " Plugius
 "----------------------------
-set nocompatible
-filetype off
-
-set rtp+=~/.vim/vundle.git/
-call vundle#rc()
-
-" Fugitive
-Bundle 'tpope/vim-fugitive'
 
 " QuickRun
-Bundle 'thinca/vim-quickrun'
 set splitright
 let g:quickrun_config = {"_" : {"split": 'vertical'}}
 let g:quickrun_config = {"_" : {"outputter/buffer/close_on_empty": 1}}
 nnoremap <Space>qr :<C-u>QuickRun<CR>
-
-filetype plugin indent on
 
 "----------------------------
 " Key-mapping
