@@ -1,6 +1,9 @@
 " Enable Syntax
 syntax on
 
+" Be iMproved
+set nocompatible
+
 " Unset beep
 set visualbell t_vb=
 
@@ -87,12 +90,24 @@ endif
 "----------------------------
 " Plugius
 "----------------------------
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+call neobundle#begin(expand('~/.vim/bundle/'))
 
-" QuickRun
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Vim-Fugative
+NeoBundle 'tpope/vim-fugitive'
+
+" Vim-Quickrun
+NeoBundle 'thinca/vim-quickrun'
 set splitright
 let g:quickrun_config = {"_" : {"split": 'vertical'}}
 let g:quickrun_config = {"_" : {"outputter/buffer/close_on_empty": 1}}
 nnoremap <Space>qr :<C-u>QuickRun<CR>
+
+call neobundle#end()
+filetype plugin indent on
 
 "----------------------------
 " Key-mapping
