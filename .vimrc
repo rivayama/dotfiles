@@ -87,13 +87,23 @@ endif
 "----------------------------
 " Plugius
 "----------------------------
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+set nocompatible
+filetype off
 
-" Vim-QuickRun
+set rtp+=~/.vim/vundle.git/
+call vundle#rc()
+
+" Fugitive
+Bundle 'tpope/vim-fugitive'
+
+" QuickRun
+Bundle 'thinca/vim-quickrun'
 set splitright
 let g:quickrun_config = {"_" : {"split": 'vertical'}}
 let g:quickrun_config = {"_" : {"outputter/buffer/close_on_empty": 1}}
 nnoremap <Space>qr :<C-u>QuickRun<CR>
+
+filetype plugin indent on
 
 "----------------------------
 " Key-mapping
@@ -122,12 +132,13 @@ cnoremap <C-b> <Left>
 cnoremap <C-f> <Right>
 " <C-d>: delete char
 cnoremap <C-d> <Del>
+" <C-h>: delete char
+cnoremap <C-h> <Del>
 " <C-n>: next history
 cnoremap <C-n> <Down>
 " <C-p>: previous history
 cnoremap <C-p> <Up>
 " <C-k>, K: delete to end
-cnoremap <C-k> <C-\>e getcmdpos() == 1 ?
-      \ '' : getcmdline()[:getcmdpos()-2]<CR>
+cnoremap <C-k> <C-\>e getcmdpos() == 1 ? '' : getcmdline()[:getcmdpos()-2]<CR>
 " <C-y>: paste
 cnoremap <C-y> <C-r>"
