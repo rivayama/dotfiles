@@ -1,12 +1,13 @@
 #!/bin/sh
-cd $(dirname $0)
-for dotfile in .?*
+
+cd ~/dotfiles
+for f in .?*
 do
-  if [ $dotfile != '..' ] && [ $dotfile != '.git' ] && [ $dotfile != '.gitmodules' ] && [ $dotfile != '.gitignore' ]
+  if [ $f != '..' ] && [ $f != '.git' ] && [ $f != '.gitmodules' ] && [ $f != '.gitignore' ]
   then
-    ln -Ffs "$PWD/$dotfile" $HOME
+    ln -Ffs "$PWD/$f" $HOME
   fi
 done
 
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-vim  +BundleInstall +q +q
+git clone https://github.com/gmarik/vundle.git ~/dotfiles/.vim/bundle/vundle
+vim +BundleInstall +q +q
