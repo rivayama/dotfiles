@@ -9,4 +9,4 @@ do
 done
 
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-vim  +BundleInstall +q
+vim  +BundleInstall +q +q
