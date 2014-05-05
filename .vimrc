@@ -1,8 +1,22 @@
+"----------------------------
+" Vundle
+"----------------------------
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'tpope/vim-fugitive'
+Bundle 'thinca/vim-quickrun'
+
+filetype plugin indent on 
+
+"----------------------------
+" Basics
+"----------------------------
 " Enable Syntax
 syntax on
-
-" Be iMproved
-set nocompatible
 
 " Unset beep
 set visualbell t_vb=
@@ -90,22 +104,11 @@ endif
 "----------------------------
 " Plugius
 "----------------------------
-filetype off
- 
-set rtp+=~/.vim/vundle.git/
-call vundle#rc()
- 
-" Vim-Fugative
-Bundle 'tpope/vim-fugitive'
-
-" Vim-Quickrun
-Bundle 'thinca/vim-quickrun'
+" Vim-QuickRun
 set splitright
 let g:quickrun_config = {"_" : {"split": 'vertical'}}
 let g:quickrun_config = {"_" : {"outputter/buffer/close_on_empty": 1}}
 nnoremap <Space>qr :<C-u>QuickRun<CR>
-
-filetype plugin indent on
 
 "----------------------------
 " Key-mapping
