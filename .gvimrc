@@ -19,5 +19,5 @@ set guifont=Menlo-Regular:h13
 set guioptions-=r
 set guioptions-=L
 
-" Unset auto change line
+" Unset auto line change
 set textwidth=0
