@@ -2,8 +2,8 @@
 colorscheme evening
 
 " Window Size
-set lines=50
-set columns=100
+set columns=80
+set lines=48
 
 " Command Line Height
 set cmdheight=1
@@ -13,8 +13,11 @@ set noswapfile
 set nobackup
 
 " Font
-set guifont=Osaka-Mono:h14
+set guifont=Menlo-Regular:h13
 
 " Hide Scrollbar on both side
 set guioptions-=r
 set guioptions-=L
+
+" Unset auto change line
+set textwidth=0
