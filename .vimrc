@@ -34,6 +34,7 @@ nnoremap <Space>gs :<C-u>Gstatus<CR>
 nnoremap <Space>gd :<C-u>Gdiff<CR>
 nnoremap <Space>gw :<C-u>Gwrite<CR>
 nnoremap <Space>gc :<C-u>Gcommit<CR>
+nnoremap <Space>gp :<C-u>Git push origin master<CR>
 
 "----------------------------
 " Basics
