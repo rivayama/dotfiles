@@ -14,6 +14,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'yuratomo/w3m.vim'
 
 call neobundle#end()
 filetype plugin indent on
