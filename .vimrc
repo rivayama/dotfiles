@@ -1,17 +1,23 @@
 "----------------------------
-" Vundle
+" Neo Bundle
 "----------------------------
-set nocompatible
-filetype off
+if has('vim_starting')
+  set nocompatible
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
 
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'thinca/vim-quickrun'
+" My Bundles here:
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'flazz/vim-colorschemes'
 
-filetype plugin indent on 
+call neobundle#end()
+filetype plugin indent on
+NeoBundleCheck
 
 "----------------------------
 " Basics

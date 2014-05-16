@@ -9,5 +9,5 @@ do
   fi
 done
 
-git clone https://github.com/gmarik/vundle.git ~/dotfiles/.vim/bundle/vundle
-vim +BundleInstall +q +q
+git clone https://github.com/Shougo/neobundle.vim ~/dotfiles/.vim/bundle/neobundle.vim
+vim +NeoBundleInstall +qall
