@@ -21,6 +21,21 @@ filetype plugin indent on
 NeoBundleCheck
 
 "----------------------------
+" Plugius
+"----------------------------
+" Vim-QuickRun
+"set splitright
+let g:quickrun_config = {"_" : {"split": 'vertical'}}
+let g:quickrun_config = {"_" : {"outputter/buffer/close_on_empty": 1}}
+nnoremap <Space>qr :<C-u>QuickRun<CR>
+
+" Vim-fugitive
+nnoremap <Space>gs :<C-u>Gstatus<CR>
+nnoremap <Space>gd :<C-u>Gdiff<CR>
+nnoremap <Space>gw :<C-u>Gwrite<CR>
+nnoremap <Space>gc :<C-u>Gcommit<CR>
+
+"----------------------------
 " Basics
 "----------------------------
 " Enable Syntax
@@ -108,15 +123,6 @@ if has('win32') && has('gui_running')
   set nobackup
 
 endif
-
-"----------------------------
-" Plugius
-"----------------------------
-" Vim-QuickRun
-set splitright
-let g:quickrun_config = {"_" : {"split": 'vertical'}}
-let g:quickrun_config = {"_" : {"outputter/buffer/close_on_empty": 1}}
-nnoremap <Space>qr :<C-u>QuickRun<CR>
 
 "----------------------------
 " Key-mapping
