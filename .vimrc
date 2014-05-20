@@ -24,7 +24,6 @@ NeoBundleCheck
 " Plugius
 "----------------------------
 " Vim-QuickRun
-"set splitright
 let g:quickrun_config = {"_" : {"split": 'vertical'}}
 let g:quickrun_config = {"_" : {"outputter/buffer/close_on_empty": 1}}
 nnoremap <Space>qr :<C-u>QuickRun<CR>
@@ -35,6 +34,55 @@ nnoremap <Space>gd :<C-u>Gdiff<CR>
 nnoremap <Space>ga :<C-u>Gwrite<CR>
 nnoremap <Space>gc :<C-u>Gcommit<CR>
 nnoremap <Space>gp :<C-u>Git push origin master<CR>
+
+" W3M.vim
+nnoremap <Space>ws :<C-u>W3m http://www.google.com<CR>
+nnoremap <Space>wn :<C-u>W3mTab http://www.google.com<CR>
+
+"----------------------------
+" Key-mapping
+"----------------------------
+" Open and reload .vimrc or _gvimrc
+if has('gui_running')
+  nnoremap <Space>ev :<C-u>split $MYGVIMRC<CR>
+  nnoremap <Space>rv :<C-u>source $MYGVIMRC<CR>
+else
+  nnoremap <Space>ev :<C-u>split $MYVIMRC<CR>
+  nnoremap <Space>rv :<C-u>source $MYVIMRC<CR>
+endif
+
+" The prefix
+nnoremap [Tag] <Nop>
+nmap t [Tag]
+
+" Tab
+nnoremap <silent> [Tag]n :tabnext<CR>
+nnoremap <silent> [Tag]p :tabprevious<CR>
+nnoremap <silent> [Tag]x :tabclose<CR>
+
+"----------------------------
+" Command-line mode keymappings:
+"----------------------------
+" <C-a>, A: move to head
+cnoremap <C-a> <Home>
+" <C-e>, E: move to end
+cnoremap <C-e> <End>
+" <C-b>: previous char
+cnoremap <C-b> <Left>
+" <C-f>: next char
+cnoremap <C-f> <Right>
+" <C-d>: delete char
+cnoremap <C-d> <Del>
+" <C-h>: delete char
+cnoremap <C-h> <Del>
+" <C-n>: next history
+cnoremap <C-n> <Down>
+" <C-p>: previous history
+cnoremap <C-p> <Up>
+" <C-k>, K: delete to end
+cnoremap <C-k> <C-\>e getcmdpos() == 1 ? '' : getcmdline()[:getcmdpos()-2]<CR>
+" <C-y>: paste
+cnoremap <C-y> <C-r>"
 
 "----------------------------
 " Basics
@@ -124,41 +172,3 @@ if has('win32') && has('gui_running')
   set nobackup
 
 endif
-
-"----------------------------
-" Key-mapping
-"----------------------------
-" Open and reload .vimrc or _gvimrc
-if has('gui_running')
-  nnoremap <Space>ev :<C-u>split $MYGVIMRC<CR>
-  nnoremap <Space>rv :<C-u>source $MYGVIMRC<CR>
-
-else
-  nnoremap <Space>ev :<C-u>split $MYVIMRC<CR>
-  nnoremap <Space>rv :<C-u>source $MYVIMRC<CR>
-
-endif
-
-"----------------------------
-" Command-line mode keymappings:
-"----------------------------
-" <C-a>, A: move to head
-cnoremap <C-a> <Home>
-" <C-e>, E: move to end
-cnoremap <C-e> <End>
-" <C-b>: previous char
-cnoremap <C-b> <Left>
-" <C-f>: next char
-cnoremap <C-f> <Right>
-" <C-d>: delete char
-cnoremap <C-d> <Del>
-" <C-h>: delete char
-cnoremap <C-h> <Del>
-" <C-n>: next history
-cnoremap <C-n> <Down>
-" <C-p>: previous history
-cnoremap <C-p> <Up>
-" <C-k>, K: delete to end
-cnoremap <C-k> <C-\>e getcmdpos() == 1 ? '' : getcmdline()[:getcmdpos()-2]<CR>
-" <C-y>: paste
-cnoremap <C-y> <C-r>"
