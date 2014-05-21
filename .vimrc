@@ -36,7 +36,8 @@ nnoremap <Space>gc :<C-u>Gcommit<CR>
 nnoremap <Space>gp :<C-u>Git push origin master<CR>
 
 " W3M.vim
-nnoremap <Space>ws :<C-u>W3m http://google.com<CR>
+nnoremap <Space>ww :<C-u>W3m http://google.com<CR>
+nnoremap <Space>ws :<C-u>W3mShowSource<CR>
 
 "----------------------------
 " Key-mapping
@@ -58,7 +59,7 @@ nmap t [Tag]
 nnoremap <silent> [Tag]n :tabnext<CR>
 nnoremap <silent> [Tag]p :tabprevious<CR>
 nnoremap <silent> [Tag]x :tabclose<CR>
-nnoremap <silent> [Tag]c :tablast <bar> W3mTab http://google.com<CR>
+nnoremap <silent> [Tag]c :tablast<bar> W3mTab http://google.com<CR>
 
 "----------------------------
 " Command-line mode keymappings:
