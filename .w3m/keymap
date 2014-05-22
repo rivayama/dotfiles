@@ -9,6 +9,12 @@ keymap C-RIGHT NULL
 keymap C-LEFT NULL
 keymap B NULL
 keymap F NULL
+keymap C-b NULL
+keymap C-a NULL
+
+########## bookmark ##########
+keymap C-b VIEW_BOOKMARK
+keymap C-a ADD_BOOKMARK
 
 ########## cursor ##########
 keymap e NEXT_WORD

@@ -1,4 +1,5 @@
 /.vim/bundle/*
 /.vim/.netrwhist
-/.w3m/cookie
-/.w3m/history
+/.w3m/*
+!/.w3m/keymap
+!/.w3m/config
