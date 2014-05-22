@@ -5,8 +5,8 @@ keymap 0 NULL
 keymap $ NULL
 keymap C-u NULL
 keymap C-d NULL
-keymap C-RIGHT NULL
-keymap C-LEFT NULL
+keymap ESC-} NULL
+keymap ESC-{ NULL
 keymap B NULL
 keymap F NULL
 keymap C-b NULL
@@ -25,8 +25,8 @@ keymap C-u PREV_PAGE
 keymap C-d NEXT_PAGE
 
 ########## tab ##########
-keymap C-RIGHT TAB_RIGHT
-keymap C-LEFT TAB_LEFT
+keymap ESC-} TAB_RIGHT
+keymap ESC-{ TAB_LEFT
 
 ########## history ##########
 keymap B PREV
