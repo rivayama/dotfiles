@@ -34,7 +34,7 @@ nnoremap <Space>gs :<C-u>Gstatus<CR>
 nnoremap <Space>gd :<C-u>Gdiff<CR>
 nnoremap <Space>ga :<C-u>Gwrite<CR>
 nnoremap <Space>gc :<C-u>Gcommit<CR>
-nnoremap <Space>gp :<C-u>Git push origin master<CR>
+nnoremap <Space>gp :<C-u>Git push origin<CR>
 
 " W3M.vim
 nnoremap <Space>ww :<C-u>W3m http://google.com<CR>
