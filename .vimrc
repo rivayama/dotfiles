@@ -11,6 +11,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here:
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
@@ -25,6 +26,7 @@ NeoBundleCheck
 "----------------------------
 " Vim-QuickRun
 set splitright
+let g:quickrun_config = {"_" : {"runner": 'vimproc'}}
 let g:quickrun_config = {"_" : {"split": 'vertical'}}
 let g:quickrun_config = {"_" : {"outputter/buffer/close_on_empty": 1}}
 nnoremap <Space>qr :<C-u>QuickRun<CR>
@@ -45,11 +47,11 @@ nnoremap <Space>ws :<C-u>W3mShowSource<CR>
 "----------------------------
 " Open and reload .vimrc or _gvimrc
 if has('gui_running')
-  nnoremap <Space>ev :<C-u>split $MYGVIMRC<CR>
-  nnoremap <Space>rv :<C-u>source $MYGVIMRC<CR>
+  nnoremap <Space>ve :<C-u>split $MYGVIMRC<CR>
+  nnoremap <Space>vr :<C-u>source $MYGVIMRC<CR>
 else
-  nnoremap <Space>ev :<C-u>split $MYVIMRC<CR>
-  nnoremap <Space>rv :<C-u>source $MYVIMRC<CR>
+  nnoremap <Space>ve :<C-u>split $MYVIMRC<CR>
+  nnoremap <Space>vr :<C-u>source $MYVIMRC<CR>
 endif
 
 " The prefix
