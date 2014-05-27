@@ -11,11 +11,14 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here:
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'yuratomo/w3m.vim'
+NeoBundle 'Shougo/vimproc', {
+  \ 'build': {
+    \ 'mac': 'make -f make_mac.mak',
+    \ 'unix': 'make -f make_unix.mak',
+  \ },
+\ }
 
 call neobundle#end()
 filetype plugin indent on
@@ -26,9 +29,10 @@ NeoBundleCheck
 "----------------------------
 " Vim-QuickRun
 set splitright
-let g:quickrun_config = {"_" : {"runner": 'vimproc'}}
-let g:quickrun_config = {"_" : {"split": 'vertical'}}
-let g:quickrun_config = {"_" : {"outputter/buffer/close_on_empty": 1}}
+let g:quickrun_config = {}
+let g:quickrun_config = {"_": {'runner': 'vimproc'}}
+let g:quickrun_config = {"_": {"split": 'vertical'}}
+let g:quickrun_config = {"_": {"outputter/buffer/close_on_empty": 1}}
 nnoremap <Space>qr :<C-u>QuickRun<CR>
 
 " Vim-fugitive
@@ -37,10 +41,6 @@ nnoremap <Space>gd :<C-u>Gdiff<CR>
 nnoremap <Space>ga :<C-u>Gwrite<CR>
 nnoremap <Space>gc :<C-u>Gcommit<CR>
 nnoremap <Space>gp :<C-u>Git push origin<CR>
-
-" W3M.vim
-nnoremap <Space>ww :<C-u>W3m http://google.com<CR>
-nnoremap <Space>ws :<C-u>W3mShowSource<CR>
 
 "----------------------------
 " Key-mapping
@@ -53,16 +53,6 @@ else
   nnoremap <Space>ve :<C-u>split $MYVIMRC<CR>
   nnoremap <Space>vr :<C-u>source $MYVIMRC<CR>
 endif
-
-" The prefix
-nnoremap [Tag] <Nop>
-nmap t [Tag]
-
-" Tab
-nnoremap <silent> [Tag]n :tabnext<CR>
-nnoremap <silent> [Tag]p :tabprevious<CR>
-nnoremap <silent> [Tag]x :tabclose<CR>
-nnoremap <silent> [Tag]c :tablast<bar> W3mTab http://google.com<CR>
 
 "----------------------------
 " Command-line mode keymappings:
