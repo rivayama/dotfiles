@@ -13,6 +13,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'Shougo/vimproc', {
   \ 'build': {
     \ 'mac': 'make -f make_mac.mak',
@@ -88,6 +89,9 @@ cnoremap <C-y> <C-r>"
 "----------------------------
 " Enable Syntax
 syntax on
+
+" Colorscheme
+colorscheme desert
 
 " Unset beep
 set visualbell t_vb=
