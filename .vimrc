@@ -56,6 +56,9 @@ else
   nnoremap <Space>vr :<C-u>source $MYVIMRC<CR>
 endif
 
+nnoremap <silent> <Space>ow :<C-u>setl wrap! wrap?<CR>
+nnoremap <silent> <Space>on :<C-u>setl number! number?<CR>
+
 "----------------------------
 " Command-line mode keymappings:
 "----------------------------
