@@ -13,13 +13,14 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'Shougo/vimproc', {
   \ 'build': {
     \ 'mac': 'make -f make_mac.mak',
     \ 'unix': 'make -f make_unix.mak',
   \ },
 \ }
+NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'itchyny/lightline.vim'
 
 call neobundle#end()
 filetype plugin indent on
@@ -91,7 +92,7 @@ cnoremap <C-y> <C-r>"
 syntax on
 
 " Colorscheme
-colorscheme default
+colorscheme desert
 
 " Unset beep
 set visualbell t_vb=
