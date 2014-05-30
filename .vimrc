@@ -91,7 +91,7 @@ cnoremap <C-y> <C-r>"
 syntax on
 
 " Colorscheme
-colorscheme desert
+colorscheme default
 
 " Unset beep
 set visualbell t_vb=
