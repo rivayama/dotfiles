@@ -48,7 +48,7 @@ nnoremap <Space>gp :<C-u>Git push origin<CR>
 
 " lightline.vim
 let g:lightline = {
-  \ 'colorscheme': 'jellybeans',
+  \ 'colorscheme': 'default',
 \ }
 
 "----------------------------
@@ -97,7 +97,7 @@ cnoremap <C-y> <C-r>"
 syntax on
 
 " Colorscheme
-colorscheme jellybeans
+colorscheme default
 
 " Unset beep
 set visualbell t_vb=
