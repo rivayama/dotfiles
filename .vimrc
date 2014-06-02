@@ -21,6 +21,9 @@ NeoBundle 'Shougo/vimproc', {
 \ }
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'itchyny/lightline.vim'
+if has('python')
+  NeoBundle 'kakkyz81/evervim'
+endif
 
 call neobundle#end()
 filetype plugin indent on
@@ -50,6 +53,11 @@ nnoremap <Space>gp :<C-u>Git push origin<CR>
 let g:lightline = {
   \ 'colorscheme': 'default',
 \ }
+
+" evervim
+if filereadable(expand('~/.evervim.token'))
+  source ~/.evervim.token
+endif
 
 "----------------------------
 " Key-mapping
