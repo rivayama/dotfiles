@@ -68,6 +68,9 @@ let g:lightline = {
 if filereadable(expand('~/.evervim.token'))
   source ~/.evervim.token
 endif
+nnoremap <Space>el :<C-u>EvervimNotebookList<CR>
+nnoremap <Space>et :<C-u>EvervimListTags<CR>
+nnoremap <Space>ec :<C-u>EvervimCreateNote<CR>
 
 "----------------------------
 " Key-mapping
