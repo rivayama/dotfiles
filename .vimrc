@@ -175,6 +175,9 @@ if $GOROOT != ''
   set rtp+=$GOROOT/misc/vim
 endif
 
+" For coffee-script
+au BufRead,BufNewFile,BufReadPre *.coffee set filetype=ruby
+
 "----------------------------
 " Win GUI Setting
 "----------------------------
