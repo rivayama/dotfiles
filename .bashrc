@@ -20,5 +20,3 @@ fi
 if [ -x "`which rbenv 2> /dev/null`" ]; then
 	eval "$(rbenv init -)"
 fi
-
-export WINEPATH=$HOME/.wine/drive_c/Program\ Files/Microsoft\ Office/Office12/
