@@ -176,7 +176,7 @@ if $GOROOT != ''
 endif
 
 " For coffee-script
-au BufRead,BufNewFile,BufReadPre *.coffee set filetype=ruby
+au BufRead,BufNewFile *.coffee set filetype=ruby
 
 "----------------------------
 " Win GUI Setting
