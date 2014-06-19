@@ -19,11 +19,14 @@ NeoBundle 'Shougo/vimproc', {
     \ 'unix': 'make -f make_unix.mak',
   \ },
 \ }
-NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'itchyny/lightline.vim'
 if has('python')
   NeoBundle 'kakkyz81/evervim'
 endif
+
+" Colorschemes
+NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'itchyny/landscape.vim'
 
 call neobundle#end()
 filetype plugin indent on
@@ -51,16 +54,17 @@ nnoremap <Space>gp :<C-u>Git push origin<CR>
 
 " lightline.vim
 let g:lightline = {
-  \ 'colorscheme': 'default',
+  \ 'colorscheme': 'landscape',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
-  \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+  \             [ 'fugitive', 'readonly', 'dir', 'filename', 'modified' ] ]
   \ },
   \ 'component': {
-  \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+  \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}',
+  \   'dir': '%.35(%{expand("%:h:s?\\S$?\\0/?")}%)',
   \ },
   \ 'component_visible_condition': {
-  \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+  \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())',
   \ },
 \ }
 
@@ -118,7 +122,7 @@ cnoremap <C-y> <C-r>"
 syntax on
 
 " Colorscheme
-colorscheme default
+colorscheme landscape
 
 " Unset beep
 set visualbell t_vb=
@@ -131,7 +135,7 @@ set backspace=indent,eol,start
 
 " Display Tab and Line end
 set list
-set listchars=eol:$,tab:>-
+set listchars=tab:▸\ ,eol:¬
 
 " Auto Indent
 set autoindent
