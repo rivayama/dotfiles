@@ -54,7 +54,7 @@ nnoremap <Space>gp :<C-u>Git push origin<CR>
 
 " lightline.vim
 let g:lightline = {
-  \ 'colorscheme': 'default',
+  \ 'colorscheme': 'landscape',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'fugitive', 'readonly', 'dir', 'filename', 'modified' ] ]
