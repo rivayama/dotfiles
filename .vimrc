@@ -54,7 +54,7 @@ nnoremap <Space>gp :<C-u>Git push origin<CR>
 
 " lightline.vim
 let g:lightline = {
-  \ 'colorscheme': 'landscape',
+  \ 'colorscheme': 'default',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'fugitive', 'readonly', 'dir', 'filename', 'modified' ] ]
@@ -136,6 +136,10 @@ set backspace=indent,eol,start
 " Display Tab and Line end
 set list
 set listchars=tab:▸\ ,eol:¬
+
+"Invisible character colors 
+highlight NonText ctermfg=238 ctermbg=232
+highlight SpecialKey ctermfg=238 ctermbg=232
 
 " Auto Indent
 set autoindent
