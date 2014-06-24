@@ -21,3 +21,20 @@ set guioptions-=L
 
 " Unset auto line change
 set textwidth=0
+
+"----------------------------
+" Win GUI Setting
+"----------------------------
+if has('win32') && has('gui_running')
+
+  " Color Scheme
+  colorscheme molokai
+
+  " Hide Menu and Toolbar
+  set guioptions-=m
+  set guioptions-=T
+
+  " Font
+  set guifont=MS_Gothic:h10:cSHIFTJIS
+
+endif

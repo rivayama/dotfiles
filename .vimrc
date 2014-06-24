@@ -137,7 +137,7 @@ set backspace=indent,eol,start
 set list
 set listchars=tab:▸\ ,eol:¬
 
-"Invisible character colors 
+" Invisible character colors 
 highlight NonText ctermfg=238 ctermbg=232
 highlight SpecialKey ctermfg=238 ctermbg=232
 
@@ -179,37 +179,18 @@ if $GOROOT != ''
   set rtp+=$GOROOT/misc/vim
 endif
 
-" For coffee-script
-au BufRead,BufNewFile *.coffee set filetype=ruby
-
 "----------------------------
-" Win GUI Setting
+" Whitespace preferences
 "----------------------------
-if has('win32') && has('gui_running')
-
-  " Color Scheme
-  colorscheme molokai
-
-  " Hide Menu and Toolbar
-  set guioptions-=m
-  set guioptions-=T
-
-  " Hide Scrollbar on both side
-  set guioptions-=r
-  set guioptions-=L
-
-  " Window Size
-  set lines=50
-  set columns=90
-
-  " Command Line Height
-  set cmdheight=1
-
-  " Font
-  set guifont=MS_Gothic:h10:cSHIFTJIS
-
-  " No Swap, No Backup
-  set noswapfile
-  set nobackup
-
+if has("autocmd")
+  filetype on
+  autocmd BufRead,BufNewFile *.coffee set filetype=ruby
+  autocmd FileType sh setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
+  autocmd FileType php setlocal ts=4 sts=4 sw=4 noexpandtab
+  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
 endif
+
