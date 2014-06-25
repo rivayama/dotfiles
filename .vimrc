@@ -174,6 +174,9 @@ autocmd FileType xhtml set indentexpr&
 " Yank to Clipboard
 set clipboard+=unnamed
 
+" Show Statusline
+set laststatus=2
+
 " For Go Lang
 if $GOROOT != ''
   set rtp+=$GOROOT/misc/vim
