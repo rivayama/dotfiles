@@ -90,6 +90,7 @@ endif
 
 nnoremap <silent> <Space>ow :<C-u>setl wrap! wrap?<CR>
 nnoremap <silent> <Space>on :<C-u>setl number! number?<CR>
+nnoremap <silent> <Space>op :<C-u>setl paste! paste?<CR>
 
 "----------------------------
 " Command-line mode keymappings:
