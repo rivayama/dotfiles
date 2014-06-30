@@ -190,6 +190,7 @@ if has("autocmd")
   filetype on
   autocmd BufRead,BufNewFile *.coffee set filetype=ruby
   autocmd FileType sh setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType vim setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
