@@ -12,6 +12,23 @@ ZSH_THEME="daveverwer"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+function gwrap() {
+  if [ $1 = 'st' ]; then
+    shift
+    \git status $@
+  elif [ $1 = 'co' ]; then
+    shift
+    \git checkout $@
+  elif [ $1 = 'cm' ]; then
+    shift
+    \git commit $@
+  else
+    \git $@
+  fi
+}
+alias git=gwrap
+alias g=git
+
 function vwrap() {
   if [ $1 = 'st' ]; then
     shift
@@ -23,8 +40,6 @@ function vwrap() {
     \vagrant $@
   fi
 }
-
-alias g="git"
 alias vagrant=vwrap
 alias v=vagrant
 
