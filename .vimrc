@@ -61,7 +61,7 @@ let g:lightline = {
   \ },
   \ 'component': {
   \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}',
-  \   'dir': '%.35(%{expand("%:h:s?\\S$?\\0/?")}%)',
+  \   'dir': '%.20(%{expand("%:h:s?\\S$?\\0/?")}%)',
   \ },
   \ 'component_visible_condition': {
   \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())',
