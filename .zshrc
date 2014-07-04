@@ -11,7 +11,6 @@ ZSH_THEME="daveverwer"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
 function vwrap() {
   if [ $1 = 'st' ]; then
     shift
@@ -23,10 +22,9 @@ function vwrap() {
     \vagrant $@
   fi
 }
-
-alias g="git"
 alias vagrant=vwrap
 alias v=vagrant
+alias g=git
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
