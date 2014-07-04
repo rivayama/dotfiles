@@ -20,12 +20,10 @@ NeoBundle 'Shougo/vimproc', {
   \ },
 \ }
 NeoBundle 'itchyny/lightline.vim'
-if has('python')
-  NeoBundle 'kakkyz81/evervim'
-endif
+NeoBundle 'tpope/vim-surround'
 
 " Colorschemes
-NeoBundle 'flazz/vim-colorschemes'
+"NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'itchyny/landscape.vim'
 
 call neobundle#end()
@@ -36,12 +34,22 @@ NeoBundleCheck
 " Plugius
 "----------------------------
 " Vim-QuickRun
+augroup QuickRunPHPUnit
+  autocmd!
+  autocmd BufWinEnter,BufNewFile *Test.php set filetype=phpunit
+augroup END
+
 set splitright
 let g:quickrun_config = {}
 let g:quickrun_config = {'_': {
   \ 'runner': 'vimproc',
   \ 'split': 'vertical',
   \ 'outputter/buffer/close_on_empty': 1,
+  \ 'phpunit': {
+    \ 'outputter': 'phpunit',
+    \ 'command': 'phpunit',
+    \ 'exec': '%c %o %s',
+  \ }
 \ }}
 nnoremap <Space>qr :<C-u>QuickRun<CR>
 
