@@ -76,18 +76,10 @@ let g:lightline = {
   \ },
 \ }
 
-" evervim
-if filereadable(expand('~/.evervim.token'))
-  source ~/.evervim.token
-endif
-nnoremap <Space>el :<C-u>EvervimNotebookList<CR>
-nnoremap <Space>et :<C-u>EvervimListTags<CR>
-nnoremap <Space>ec :<C-u>EvervimCreateNote<CR>
-
 "----------------------------
 " Key-mapping
 "----------------------------
-" Open and reload .vimrc or _gvimrc
+" Open .vimrc or .gvimrc
 if has('gui_running')
   nnoremap <Space>ve :<C-u>split $MYGVIMRC<CR>
   nnoremap <Space>vr :<C-u>source $MYGVIMRC<CR>
@@ -177,8 +169,8 @@ set encoding=utf-8
 set fileformat=unix
 
 " Stop HTML Auto Indent
-autocmd FileType html set indentexpr&
-autocmd FileType xhtml set indentexpr&
+"autocmd FileType html set indentexpr&
+"autocmd FileType xhtml set indentexpr&
 
 " Yank to Clipboard
 set clipboard+=unnamed
@@ -197,6 +189,7 @@ endif
 if has("autocmd")
   filetype on
   autocmd BufRead,BufNewFile *.coffee set filetype=ruby
+  autocmd BufRead,BufNewFile *.json set filetype=javascript
   autocmd FileType sh setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType vim setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
