@@ -21,6 +21,7 @@ NeoBundle 'Shougo/vimproc', {
 \ }
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'toyamarinyon/vim-swift'
 
 " Colorschemes
 "NeoBundle 'flazz/vim-colorschemes'
@@ -40,17 +41,22 @@ augroup QuickRunPHPUnit
 augroup END
 
 set splitright
-let g:quickrun_config = {}
-let g:quickrun_config = {'_': {
-  \ 'runner': 'vimproc',
-  \ 'split': 'vertical',
-  \ 'outputter/buffer/close_on_empty': 1,
+let g:quickrun_config = {
+  \'_': {
+    \ 'runner': 'vimproc',
+    \ 'split': 'vertical',
+    \ 'outputter/buffer/close_on_empty': 1,
+  \ },
   \ 'phpunit': {
     \ 'outputter': 'phpunit',
     \ 'command': 'phpunit',
     \ 'exec': '%c %o %s',
+  \ },
+  \ 'swift': {
+    \ 'command': 'swift',
+    \ 'cmdopt': '-sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -i',
   \ }
-\ }}
+\ }
 nnoremap <Space>qr :<C-u>QuickRun<CR>
 
 " Vim-fugitive
@@ -77,9 +83,6 @@ let g:lightline = {
 \ }
 
 " evervim
-if filereadable(expand('~/.evervim.token'))
-  source ~/.evervim.token
-endif
 nnoremap <Space>el :<C-u>EvervimNotebookList<CR>
 nnoremap <Space>et :<C-u>EvervimListTags<CR>
 nnoremap <Space>ec :<C-u>EvervimCreateNote<CR>
