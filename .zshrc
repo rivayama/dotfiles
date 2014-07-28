@@ -26,6 +26,12 @@ alias vagrant=vwrap
 alias v=vagrant
 alias g=git
 
+function peco-cd() {
+  local dir=$(find ~/ -type d | peco)
+  cd ${dir}
+}
+alias pcd=peco-cd
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -82,6 +88,7 @@ export PATH=/Applications/Xcode6-Beta.app/Contents/Developer/Toolchains/XcodeDef
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -89,3 +96,5 @@ export PATH=/Applications/Xcode6-Beta.app/Contents/Developer/Toolchains/XcodeDef
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 export DOCKER_HOST=tcp://127.0.0.1:4243
+
+[[ -s /Library/Ruby/Gems/2.0.0/gems/tmuxinator-0.6.8/completion/tmuxinator.zsh ]] && source /Library/Ruby/Gems/2.0.0/gems/tmuxinator-0.6.8/completion/tmuxinator.zsh

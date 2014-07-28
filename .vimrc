@@ -21,6 +21,7 @@ NeoBundle 'Shougo/vimproc', {
 \ }
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'toyamarinyon/vim-swift'
 
 " Colorschemes
 "NeoBundle 'flazz/vim-colorschemes'
@@ -40,17 +41,22 @@ augroup QuickRunPHPUnit
 augroup END
 
 set splitright
-let g:quickrun_config = {}
-let g:quickrun_config = {'_': {
-  \ 'runner': 'vimproc',
-  \ 'split': 'vertical',
-  \ 'outputter/buffer/close_on_empty': 1,
+let g:quickrun_config = {
+  \'_': {
+    \ 'runner': 'vimproc',
+    \ 'split': 'vertical',
+    \ 'outputter/buffer/close_on_empty': 1,
+  \ },
   \ 'phpunit': {
     \ 'outputter': 'phpunit',
     \ 'command': 'phpunit',
     \ 'exec': '%c %o %s',
+  \ },
+  \ 'swift': {
+    \ 'command': 'swift',
+    \ 'cmdopt': '-sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -i',
   \ }
-\ }}
+\ }
 nnoremap <Space>qr :<C-u>QuickRun<CR>
 
 " Vim-fugitive
@@ -137,6 +143,9 @@ set visualbell t_vb=
 " Set Highlight Search
 set hlsearch
 
+" Set Line Number
+set number
+
 " Set Backspace
 set backspace=indent,eol,start
 
@@ -200,7 +209,9 @@ if has("autocmd")
   autocmd FileType vim setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType scss setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType eruby setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType php setlocal ts=4 sts=4 sw=4 noexpandtab
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
