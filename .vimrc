@@ -69,12 +69,18 @@ let g:lightline = {
   \ },
   \ 'component': {
   \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}',
-  \   'dir': '%.20(%{expand("%:h:s?\\S$?\\0/?")}%)',
+  \   'dir': '%.30(%{expand("%:h:s?\\S$?\\0/?")}%)',
   \ },
   \ 'component_visible_condition': {
   \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())',
   \ },
 \ }
+
+" Ctrl-p
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_working_path_mode = 'ra' 
+nnoremap <Space>p :<C-u>CtrlPBookmarkDir<CR>
+nnoremap <Space>pa :<C-u>CtrlPBookmarkDirAdd
 
 "----------------------------
 " Key-mapping
@@ -169,8 +175,8 @@ set encoding=utf-8
 set fileformat=unix
 
 " Stop HTML Auto Indent
-"autocmd FileType html set indentexpr&
-"autocmd FileType xhtml set indentexpr&
+autocmd FileType html set indentexpr&
+autocmd FileType xhtml set indentexpr&
 
 " Yank to Clipboard
 set clipboard+=unnamed
