@@ -1,4 +1,5 @@
 /.vim/bundle/*
 /.vim/.netrwhist
+/.oh-my-zsh/*
 /.w3m/*
 !/.w3m/keymap

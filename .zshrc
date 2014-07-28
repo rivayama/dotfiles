@@ -26,11 +26,21 @@ alias vagrant=vwrap
 alias v=vagrant
 alias g=git
 
+##### peco-cd #####
 function peco-cd() {
-  local dir=$(find ~/ -type d | peco)
+  local dir=$(find . -type d | peco)
   cd ${dir}
 }
 alias pcd=peco-cd
+
+##### peco-cp #####
+function peco-cp() {
+  local file=$(find . -type f | peco)
+  local dest=$(find . -type d | peco)
+  cp ${file} ${dest}
+  echo "cp ${file} ${dest}"
+}
+alias pcp=peco-cp
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
