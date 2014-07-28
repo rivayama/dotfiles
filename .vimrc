@@ -22,6 +22,7 @@ NeoBundle 'Shougo/vimproc', {
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'toyamarinyon/vim-swift'
+NeoBundle 'sjl/gundo.vim'
 
 " Colorschemes
 "NeoBundle 'flazz/vim-colorschemes'
@@ -87,6 +88,9 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'ra' 
 nnoremap <Space>p :<C-u>CtrlPBookmarkDir<CR>
 nnoremap <Space>pa :<C-u>CtrlPBookmarkDirAdd
+
+" Gundo.vim
+nnoremap <Space>gu :GundoToggle<CR>
 
 "----------------------------
 " Key-mapping
