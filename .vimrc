@@ -23,6 +23,7 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'toyamarinyon/vim-swift'
 NeoBundle 'sjl/gundo.vim'
+NeoBundle 'kana/vim-submode'
 
 " Colorschemes
 "NeoBundle 'flazz/vim-colorschemes'
@@ -91,6 +92,16 @@ nnoremap <Space>pa :<C-u>CtrlPBookmarkDirAdd
 
 " Gundo.vim
 nnoremap <Space>gu :GundoToggle<CR>
+
+" vim-submode
+call submode#enter_with('winsize', 'n', '', '<C-w>>', '<C-w>>')
+call submode#enter_with('winsize', 'n', '', '<C-w><', '<C-w><')
+call submode#enter_with('winsize', 'n', '', '<C-w>+', '<C-w>+')
+call submode#enter_with('winsize', 'n', '', '<C-w>-', '<C-w>-')
+call submode#map('winsize', 'n', '', '>', '<C-w>>')
+call submode#map('winsize', 'n', '', '<', '<C-w><')
+call submode#map('winsize', 'n', '', '+', '<C-w>+')
+call submode#map('winsize', 'n', '', '-', '<C-w>-')
 
 "----------------------------
 " Key-mapping
