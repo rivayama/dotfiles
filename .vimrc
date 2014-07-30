@@ -106,7 +106,7 @@ call submode#map('winsize', 'n', '', '-', '<C-w>-')
 "----------------------------
 " Key-mapping
 "----------------------------
-" Open .vimrc or .gvimrc
+" Open and reload .vimrc or .gvimrc
 if has('gui_running')
   nnoremap <Space>ve :<C-u>split $MYGVIMRC<CR>
   nnoremap <Space>vr :<C-u>source $MYGVIMRC<CR>
@@ -119,70 +119,42 @@ nnoremap <silent> <Space>ow :<C-u>setl wrap! wrap?<CR>
 nnoremap <silent> <Space>on :<C-u>setl number! number?<CR>
 nnoremap <silent> <Space>op :<C-u>setl paste! paste?<CR>
 
-"----------------------------
-" Command-line mode keymappings:
-"----------------------------
-" <C-a>, A: move to head
+" Command-line mode:
 cnoremap <C-a> <Home>
-" <C-e>, E: move to end
 cnoremap <C-e> <End>
-" <C-b>: previous char
 cnoremap <C-b> <Left>
-" <C-f>: next char
 cnoremap <C-f> <Right>
-" <C-d>: delete char
 cnoremap <C-d> <Del>
-" <C-h>: delete char
 cnoremap <C-h> <Del>
-" <C-n>: next history
 cnoremap <C-n> <Down>
-" <C-p>: previous history
 cnoremap <C-p> <Up>
-" <C-k>, K: delete to end
 cnoremap <C-k> <C-\>e getcmdpos() == 1 ? '' : getcmdline()[:getcmdpos()-2]<CR>
-" <C-y>: paste
 cnoremap <C-y> <C-r>"
 
 "----------------------------
 " Basics
 "----------------------------
-" Enable Syntax
 syntax on
-
-" Colorscheme
 colorscheme landscape
 
-" Unset beep
+" Preferences
 set visualbell t_vb=
-
-" Set Highlight Search
-set hlsearch
-
-" Set Line Number
 set number
-
-" Set Backspace
-set backspace=indent,eol,start
-
-" Display Tab and Line end
-set list
-set listchars=tab:▸\ ,eol:¬
-
-" Invisible character colors 
-highlight NonText ctermfg=238 ctermbg=232
-highlight SpecialKey ctermfg=238 ctermbg=232
-
-" Auto Indent
+set nowrap
 set autoindent
 
-" Nowrap
-set nowrap
-
-" Set Ignore Search
+set hlsearch
 set ignorecase
 
-" Set fold method
 set fdm=marker
+set backspace=indent,eol,start
+set clipboard+=unnamed
+
+" Show Invisibles
+set list
+set listchars=tab:▸\ ,eol:¬
+highlight NonText ctermfg=238 ctermbg=232
+highlight SpecialKey ctermfg=238 ctermbg=232
 
 " Tab Setting
 set noexpandtab
@@ -190,20 +162,17 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
-" File Encoding
+" File Encoding and dafaults
 set fileencodings=utf-8,cp932,euc-jp
 set fileformats=unix,dos
-
-" Default
 set encoding=utf-8
 set fileformat=unix
 
 " Stop HTML Auto Indent
-autocmd FileType html set indentexpr&
-autocmd FileType xhtml set indentexpr&
-
-" Yank to Clipboard
-set clipboard+=unnamed
+if has("autocmd")
+  autocmd FileType html set indentexpr&
+  autocmd FileType xhtml set indentexpr&
+endif
 
 " Show Statusline
 set laststatus=2
