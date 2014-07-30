@@ -1,5 +1,9 @@
 " Color scheme
-colorscheme evening
+colorscheme macvim
+
+" Invisible character colors 
+highlight NonText guifg=black
+highlight SpecialKey guifg=black
 
 " Window Size
 set columns=80
