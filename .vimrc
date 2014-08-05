@@ -27,11 +27,20 @@ NeoBundle 'kana/vim-submode'
 
 " Colorschemes
 "NeoBundle 'flazz/vim-colorschemes'
+"NeoBundle 'croaker/mustang-vim'
+"NeoBundle 'romainl/Apprentice'
+"NeoBundle 'hickop/vim-hickop-colors'
+"NeoBundle 'AlxHnr/clear_colors'
+
 NeoBundle 'itchyny/landscape.vim'
+NeoBundle 'toupeira/vim-desertink'
+NeoBundle 'sk1418/last256'
 
 call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
+
+colorscheme last256
 
 "----------------------------
 " Plugius
@@ -135,7 +144,6 @@ cnoremap <C-y> <C-r>"
 " Basics
 "----------------------------
 syntax on
-colorscheme landscape
 
 " Preferences
 set visualbell t_vb=
@@ -196,6 +204,7 @@ if has("autocmd")
   autocmd FileType scss setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType eruby setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType swift setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType php setlocal ts=4 sts=4 sw=4 noexpandtab
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
