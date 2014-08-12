@@ -34,13 +34,17 @@ NeoBundle 'kana/vim-submode'
 
 NeoBundle 'itchyny/landscape.vim'
 NeoBundle 'toupeira/vim-desertink'
+NeoBundle 'Tuurlijk/typofree.vim'
 NeoBundle 'sk1418/last256'
+
+NeoBundle 'dsolstad/vim-wombat256i'
+NeoBundle 'depuracao/vim-darkdevel'
 
 call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
 
-colorscheme landscape
+colorscheme darkdevel
 
 "----------------------------
 " Plugius
