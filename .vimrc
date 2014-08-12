@@ -31,20 +31,21 @@ NeoBundle 'kana/vim-submode'
 "NeoBundle 'romainl/Apprentice'
 "NeoBundle 'hickop/vim-hickop-colors'
 "NeoBundle 'AlxHnr/clear_colors'
+"NeoBundle 'dsolstad/vim-wombat256i'
+"NeoBundle 'sk1418/last256'
 
 NeoBundle 'itchyny/landscape.vim'
-NeoBundle 'toupeira/vim-desertink'
 NeoBundle 'Tuurlijk/typofree.vim'
-NeoBundle 'sk1418/last256'
-
-NeoBundle 'dsolstad/vim-wombat256i'
 NeoBundle 'depuracao/vim-darkdevel'
+NeoBundle 'toupeira/vim-desertink'
 
 call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
 
-colorscheme darkdevel
+syntax on
+colorscheme desertink
+highlight normal ctermbg=232
 
 "----------------------------
 " Plugius
@@ -147,8 +148,6 @@ cnoremap <C-y> <C-r>"
 "----------------------------
 " Basics
 "----------------------------
-syntax on
-
 " Preferences
 set visualbell t_vb=
 set number
