@@ -31,21 +31,21 @@ NeoBundle 'kana/vim-submode'
 "NeoBundle 'romainl/Apprentice'
 "NeoBundle 'hickop/vim-hickop-colors'
 "NeoBundle 'AlxHnr/clear_colors'
-"NeoBundle 'dsolstad/vim-wombat256i'
 "NeoBundle 'sk1418/last256'
+NeoBundleLazy 'Tuurlijk/typofree.vim'
+NeoBundleLazy 'depuracao/vim-darkdevel'
+NeoBundleLazy 'toupeira/vim-desertink'
+NeoBundleLazy 'dsolstad/vim-wombat256i'
 
 NeoBundle 'itchyny/landscape.vim'
-NeoBundle 'Tuurlijk/typofree.vim'
-NeoBundle 'depuracao/vim-darkdevel'
-NeoBundle 'toupeira/vim-desertink'
 
 call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
 
 syntax on
-colorscheme desertink
-highlight normal ctermbg=232
+colorscheme landscape
+"highlight normal ctermbg=232
 
 "----------------------------
 " Plugius
