@@ -1,9 +1,9 @@
 " Color scheme
-colorscheme macvim
+colorscheme desertink
 
-" Invisible character colors 
-highlight NonText guifg=black
-highlight SpecialKey guifg=black
+" Invisible character colors
+"highlight NonText guifg=black
+"highlight SpecialKey guifg=black
 
 " Window Size
 set columns=80
