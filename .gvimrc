@@ -1,5 +1,5 @@
 " Color scheme
-colorscheme desertink
+colorscheme darkdevel
 
 " Invisible character colors
 "highlight NonText guifg=black
