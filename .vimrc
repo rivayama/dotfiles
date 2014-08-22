@@ -44,8 +44,7 @@ filetype plugin indent on
 NeoBundleCheck
 
 syntax on
-colorscheme typofree
-"highlight normal ctermbg=232
+colorscheme landscape
 
 "----------------------------
 " Plugius
