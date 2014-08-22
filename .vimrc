@@ -32,10 +32,10 @@ NeoBundle 'kana/vim-submode'
 "NeoBundle 'hickop/vim-hickop-colors'
 "NeoBundle 'AlxHnr/clear_colors'
 "NeoBundle 'sk1418/last256'
-NeoBundleLazy 'Tuurlijk/typofree.vim'
-NeoBundleLazy 'depuracao/vim-darkdevel'
-NeoBundleLazy 'toupeira/vim-desertink'
-NeoBundleLazy 'dsolstad/vim-wombat256i'
+NeoBundle 'Tuurlijk/typofree.vim'
+NeoBundle 'depuracao/vim-darkdevel'
+NeoBundle 'toupeira/vim-desertink'
+NeoBundle 'dsolstad/vim-wombat256i'
 
 NeoBundle 'itchyny/landscape.vim'
 
@@ -44,7 +44,7 @@ filetype plugin indent on
 NeoBundleCheck
 
 syntax on
-colorscheme landscape
+colorscheme typofree
 "highlight normal ctermbg=232
 
 "----------------------------
