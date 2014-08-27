@@ -1,5 +1,5 @@
 " Color scheme
-colorscheme darkdevel
+colorscheme landscape
 
 " Invisible character colors
 "highlight NonText guifg=black
