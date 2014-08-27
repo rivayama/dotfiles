@@ -38,13 +38,14 @@ NeoBundle 'toupeira/vim-desertink'
 NeoBundle 'dsolstad/vim-wombat256i'
 
 NeoBundle 'itchyny/landscape.vim'
+NeoBundle 'rivayama/twiga.vim'
 
 call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
 
 syntax on
-colorscheme landscape
+colorscheme twiga
 
 "----------------------------
 " Plugius
@@ -164,8 +165,8 @@ set clipboard+=unnamed
 " Show Invisibles
 set list
 set listchars=tab:▸\ ,eol:¬
-highlight NonText ctermfg=238 ctermbg=232
-highlight SpecialKey ctermfg=238 ctermbg=232
+"highlight NonText ctermfg=238 ctermbg=232
+"highlight SpecialKey ctermfg=238 ctermbg=232
 
 " Tab Setting
 set noexpandtab

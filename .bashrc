@@ -7,7 +7,6 @@ fi
 
 # User specific aliases and functions
 alias vi='vim'
-alias ls='ls -G'
 
 # For Go Lang
 if [ -x "`which go 2> /dev/null`" ]; then
