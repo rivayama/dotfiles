@@ -80,6 +80,7 @@ nnoremap <Space>gd :<C-u>Gdiff<CR>
 nnoremap <Space>ga :<C-u>Gwrite<CR>
 nnoremap <Space>gc :<C-u>Gcommit<CR>
 nnoremap <Space>gp :<C-u>Git push origin<CR>
+autocmd QuickFixCmdPost *grep* cwindow
 
 " lightline.vim
 let g:lightline = {
