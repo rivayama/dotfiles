@@ -28,24 +28,29 @@ NeoBundle 'kana/vim-submode'
 " Colorschemes
 "NeoBundle 'flazz/vim-colorschemes'
 "NeoBundle 'croaker/mustang-vim'
-"NeoBundle 'romainl/Apprentice'
 "NeoBundle 'hickop/vim-hickop-colors'
 "NeoBundle 'AlxHnr/clear_colors'
 "NeoBundle 'sk1418/last256'
-NeoBundle 'Tuurlijk/typofree.vim'
-NeoBundle 'depuracao/vim-darkdevel'
-NeoBundle 'toupeira/vim-desertink'
-NeoBundle 'dsolstad/vim-wombat256i'
-
-NeoBundle 'itchyny/landscape.vim'
+"NeoBundle 'Tuurlijk/typofree.vim'
+"NeoBundle 'depuracao/vim-darkdevel'
+"NeoBundle 'toupeira/vim-desertink'
+"NeoBundle 'dsolstad/vim-wombat256i'
+"NeoBundle 'w0ng/vim-hybrid'
+"NeoBundle 'tomasr/molokai'
+"NeoBundle 'romainl/Apprentice'
+"NeoBundle 'itchyny/landscape.vim'
 NeoBundle 'rivayama/twiga.vim'
+NeoBundle 'nanotech/jellybeans.vim'
 
 call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
 
 syntax on
-colorscheme twiga
+colorscheme jellybeans
+highlight Normal ctermbg=none
+highlight NonText ctermfg=238 ctermbg=232
+highlight SpecialKey ctermfg=238 ctermbg=232
 
 "----------------------------
 " Plugius
@@ -165,8 +170,6 @@ set clipboard+=unnamed
 " Show Invisibles
 set list
 set listchars=tab:▸\ ,eol:¬
-"highlight NonText ctermfg=238 ctermbg=232
-"highlight SpecialKey ctermfg=238 ctermbg=232
 
 " Tab Setting
 set noexpandtab
