@@ -1,5 +1,5 @@
 " Color scheme
-colorscheme landscape
+colorscheme macvim
 
 " Invisible character colors
 "highlight NonText guifg=black
