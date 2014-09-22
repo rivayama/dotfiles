@@ -24,6 +24,8 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'toyamarinyon/vim-swift'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'kana/vim-submode'
+NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'takahirojin/gbr.vim'
 
 " Colorschemes
 "NeoBundle 'flazz/vim-colorschemes'
@@ -47,7 +49,7 @@ filetype plugin indent on
 NeoBundleCheck
 
 syntax on
-colorscheme jellybeans
+colorscheme twiga
 highlight Normal ctermbg=none
 highlight NonText ctermfg=238 ctermbg=232
 highlight SpecialKey ctermfg=238 ctermbg=232
@@ -56,11 +58,6 @@ highlight SpecialKey ctermfg=238 ctermbg=232
 " Plugius
 "----------------------------
 " Vim-QuickRun
-augroup QuickRunPHPUnit
-  autocmd!
-  autocmd BufWinEnter,BufNewFile *Test.php set filetype=phpunit
-augroup END
-
 set splitright
 let g:quickrun_config = {
   \'_': {
@@ -207,6 +204,7 @@ if has("autocmd")
   autocmd FileType sh setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType vim setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType xhtml setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType eruby setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType css setlocal ts=4 sts=4 sw=4 noexpandtab

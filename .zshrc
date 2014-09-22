@@ -42,6 +42,27 @@ function peco-cp() {
 }
 alias pcp=peco-cp
 
+##### remove-swp #####
+function remove-swp() {
+  find ./ -name "*.swp"
+  find ./ -name "*.swp" | xargs rm
+}
+alias rmswp=remove-swp
+
+##### add-branch #####
+function add-branch() {
+  if [ -z "$1" ]; then
+    echo "Tell me new branch name!"
+    return
+  fi
+  git fetch
+  git checkout master
+  git pull
+  git checkout -b "$1"
+  echo "Create branch \"$1\""
+}
+alias git_add_branch=add-branch
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
