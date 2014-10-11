@@ -90,11 +90,10 @@ let g:lightline = {
   \ 'colorscheme': 'default',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
-  \             [ 'fugitive', 'readonly', 'dir', 'filename', 'modified' ] ]
+  \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
   \ },
   \ 'component': {
   \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}',
-  \   'dir': '%.30(%{expand("%:h:s?\\S$?\\0/?")}%)',
   \ },
   \ 'component_visible_condition': {
   \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())',
