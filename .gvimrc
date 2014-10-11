@@ -1,5 +1,5 @@
 " Color scheme
-colorscheme macvim
+colorscheme desert
 
 " Invisible character colors
 "highlight NonText guifg=black
