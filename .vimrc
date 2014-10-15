@@ -162,6 +162,7 @@ set ignorecase
 set fdm=marker
 set backspace=indent,eol,start
 set clipboard+=unnamed
+set noswapfile
 
 " Show Invisibles
 set list
