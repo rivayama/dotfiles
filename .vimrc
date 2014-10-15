@@ -135,13 +135,18 @@ nnoremap <silent> <Space>ow :<C-u>setl wrap! wrap?<CR>
 nnoremap <silent> <Space>on :<C-u>setl number! number?<CR>
 nnoremap <silent> <Space>op :<C-u>setl paste! paste?<CR>
 
+nnoremap <silent> <Space>te :<C-u>tabedit<CR>
+nnoremap <silent> <Space>tc :<C-u>tabclose<CR>
+nnoremap <silent> <Space>tn :<C-u>tabnext<CR>
+nnoremap <silent> <Space>tp :<C-u>tabprevious<CR>
+
 " Command-line mode:
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-b> <Left>
 cnoremap <C-f> <Right>
 cnoremap <C-d> <Del>
-cnoremap <C-h> <Del>
+cnoremap <C-h> <BS>
 cnoremap <C-n> <Down>
 cnoremap <C-p> <Up>
 cnoremap <C-k> <C-\>e getcmdpos() == 1 ? '' : getcmdline()[:getcmdpos()-2]<CR>
