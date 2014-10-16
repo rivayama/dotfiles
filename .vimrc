@@ -78,7 +78,8 @@ let g:quickrun_config = {
 nnoremap <Space>qr :<C-u>QuickRun<CR>
 
 " Vim-fugitive
-nnoremap <Space>gs :<C-u>Gstatus<CR>
+" nnoremap <Space>gs :<C-u>Gstatus<CR>
+nnoremap <Space>gs :tabedit tmp<CR>:Gstatus<CR>
 nnoremap <Space>gd :<C-u>Gdiff<CR>
 nnoremap <Space>ga :<C-u>Gwrite<CR>
 nnoremap <Space>gc :<C-u>Gcommit<CR>
