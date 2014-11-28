@@ -13,7 +13,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'Shougo/vimproc', {
+NeoBundleLazy 'Shougo/vimproc', {
   \ 'build': {
     \ 'mac': 'make -f make_mac.mak',
     \ 'unix': 'make -f make_unix.mak',
@@ -21,8 +21,8 @@ NeoBundle 'Shougo/vimproc', {
 \ }
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'toyamarinyon/vim-swift'
-NeoBundle 'sjl/gundo.vim'
+NeoBundleLazy 'toyamarinyon/vim-swift'
+NeoBundleLazy 'sjl/gundo.vim'
 NeoBundle 'kana/vim-submode'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'takahirojin/gbr.vim'
@@ -41,8 +41,8 @@ NeoBundle 'takahirojin/gbr.vim'
 "NeoBundle 'tomasr/molokai'
 "NeoBundle 'romainl/Apprentice'
 "NeoBundle 'itchyny/landscape.vim'
-NeoBundle 'rivayama/twiga.vim'
 NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'rivayama/twiga.vim'
 
 call neobundle#end()
 filetype plugin indent on
@@ -87,10 +87,9 @@ autocmd QuickFixCmdPost *grep* cwindow
 
 " lightline.vim
 let g:lightline = {
-  \ 'colorscheme': 'default',
+  \ 'colorscheme': 'twiga',
   \ 'active': {
-  \   'left': [ [ 'mode', 'paste' ],
-  \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+  \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
   \ },
   \ 'component': {
   \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}',
@@ -199,6 +198,24 @@ set laststatus=2
 if $GOROOT != ''
   set rtp+=$GOROOT/misc/vim
 endif
+
+" rename current file
+function! RenameFile(...)
+  let s:copy = 0
+  let s:file_name = a:1
+  if a:1 =~ '-c' 
+    let s:copy = 1
+    let s:file_name = a:2
+  endif
+  let s:file_path = expand('%:h')
+  exec ":file " . s:file_path . '/' . s:file_name
+  if s:copy != 1 
+    call delete(expand('#'))
+  endif
+endfunction
+command! -nargs=+ Rename call RenameFile(<f-args>)
+nnoremap <Space>mv :<C-u>Rename<Space>
+nnoremap <Space>cp :<C-u>Rename -c<Space>
 
 "----------------------------
 " Whitespace preferences
