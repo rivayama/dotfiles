@@ -210,12 +210,24 @@ function! RenameFile(...)
   let s:file_path = expand('%:h')
   exec ":file " . s:file_path . '/' . s:file_name
   if s:copy != 1 
+    exec ":w"
     call delete(expand('#'))
   endif
 endfunction
 command! -nargs=+ Rename call RenameFile(<f-args>)
 nnoremap <Space>mv :<C-u>Rename<Space>
 nnoremap <Space>cp :<C-u>Rename -c<Space>
+
+" diff
+set diffexpr=MyDiff()
+function MyDiff()
+  let opt = ""
+  if &diffopt =~ "iwhite"
+    let opt = opt . "-b "
+  endif
+  silent execute "!~/.vim/git-diff-normal-format " . opt . v:fname_in . " " . v:fname_new . " > " . v:fname_out
+  redraw!
+endfunction
 
 "----------------------------
 " Whitespace preferences
