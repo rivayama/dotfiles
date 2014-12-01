@@ -220,7 +220,7 @@ nnoremap <Space>cp :<C-u>Rename -c<Space>
 
 " diff
 set diffexpr=MyDiff()
-function MyDiff()
+function! MyDiff()
   let opt = ""
   if &diffopt =~ "iwhite"
     let opt = opt . "-b "
