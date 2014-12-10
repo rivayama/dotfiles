@@ -26,6 +26,7 @@ NeoBundleLazy 'sjl/gundo.vim'
 NeoBundle 'kana/vim-submode'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'takahirojin/gbr.vim'
+NeoBundle 'miyakogi/conoline.vim'
 
 " Colorschemes
 "NeoBundle 'flazz/vim-colorschemes'
@@ -117,6 +118,9 @@ call submode#map('winsize', 'n', '', '>', '<C-w>>')
 call submode#map('winsize', 'n', '', '<', '<C-w><')
 call submode#map('winsize', 'n', '', '+', '<C-w>+')
 call submode#map('winsize', 'n', '', '-', '<C-w>-')
+
+" Conoline.vim
+let g:conoline_auto_enable = 1
 
 "----------------------------
 " Key-mapping
