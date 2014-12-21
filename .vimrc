@@ -26,7 +26,9 @@ NeoBundleLazy 'sjl/gundo.vim'
 NeoBundle 'kana/vim-submode'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'takahirojin/gbr.vim'
-NeoBundle 'miyakogi/conoline.vim'
+"NeoBundle 'miyakogi/conoline.vim'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/unite-outline'
 
 " Colorschemes
 "NeoBundle 'flazz/vim-colorschemes'
@@ -120,7 +122,11 @@ call submode#map('winsize', 'n', '', '+', '<C-w>+')
 call submode#map('winsize', 'n', '', '-', '<C-w>-')
 
 " Conoline.vim
-let g:conoline_auto_enable = 1
+" let g:conoline_auto_enable = 1
+
+" Unite-outline
+" let g:unite_split_rule = 'botright'
+nnoremap <Space>uo :<C-u>Unite -vertical -no-quit -winwidth=40 outline<Return>
 
 "----------------------------
 " Key-mapping
@@ -232,6 +238,10 @@ function! MyDiff()
   silent execute "!~/.vim/git-diff-normal-format " . opt . v:fname_in . " " . v:fname_new . " > " . v:fname_out
   redraw!
 endfunction
+
+" vimgrep
+set grepprg=grep\ -nri\ --exclude-dir=.svn\ --exclude-dir=.git
+autocmd QuickFixCmdPost grep cwindow
 
 "----------------------------
 " Whitespace preferences
