@@ -209,24 +209,33 @@ if $GOROOT != ''
   set rtp+=$GOROOT/misc/vim
 endif
 
-" rename current file
-function! RenameFile(...)
-  let s:copy = 0
-  let s:file_name = a:1
-  if a:1 =~ '-c' 
-    let s:copy = 1
-    let s:file_name = a:2
+" Rename or copy file
+function! s:move(file, act) 
+  let file = a:file
+  let act = a:act
+  if file !~# '/'
+    let file = expand('%:h') . '/' . file 
   endif
-  let s:file_path = expand('%:h')
-  exec ":file " . s:file_path . '/' . s:file_name
-  if s:copy != 1 
-    exec ":w"
+  if filereadable(file)
+    echo '"' . file . '"is already exists. Overwrite? [y/N]' 
+    if getchar() !=? 'y'
+      echo "Aborted..."
+      return
+    endif
+  endif
+  let dir = fnamemodify(file, ':h')
+  if !isdirectory(dir)
+    call mkdir(dir, 'p') 
+  endif
+  execute 'saveas ' . file 
+  if act ==# 'mv' 
     call delete(expand('#'))
   endif
 endfunction
-command! -nargs=+ Rename call RenameFile(<f-args>)
-nnoremap <Space>mv :<C-u>Rename<Space>
-nnoremap <Space>cp :<C-u>Rename -c<Space>
+command! -nargs=1 -complete=file CopyFile call s:move(<q-args>, 'cp')
+command! -nargs=1 -complete=file MoveFile call s:move(<q-args>, 'mv')
+nnoremap <Space>cp :<C-u>CopyFile<Space>
+nnoremap <Space>mv :<C-u>MoveFile<Space>
 
 " diff
 set diffexpr=MyDiff()
