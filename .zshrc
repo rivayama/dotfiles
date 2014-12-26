@@ -27,30 +27,27 @@ alias v=vagrant
 alias g=git
 
 ##### peco-cd #####
-function peco-cd() {
+function pcd() {
   local dir=$(find . -type d | peco)
   cd ${dir}
 }
-alias pcd=peco-cd
 
 ##### peco-cp #####
-function peco-cp() {
+function pcp() {
   local file=$(find . -type f | peco)
   local dest=$(find . -type d | peco)
   cp ${file} ${dest}
   echo "cp ${file} ${dest}"
 }
-alias pcp=peco-cp
 
 ##### remove-swp #####
-function remove-swp() {
+function rmswp() {
   find ./ -name "*.swp"
   find ./ -name "*.swp" | xargs rm
 }
-alias rmswp=remove-swp
 
 ##### add-branch #####
-function add-branch() {
+function gnewbranch() {
   if [ -z "$1" ]; then
     echo "Tell me new branch name!"
     return
@@ -61,7 +58,6 @@ function add-branch() {
   git checkout -b "$1"
   echo "Create branch \"$1\""
 }
-alias git_add_branch=add-branch
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"

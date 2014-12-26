@@ -13,22 +13,22 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'kana/vim-submode'
+NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'takahirojin/gbr.vim'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/unite-outline'
+
+NeoBundleLazy 'toyamarinyon/vim-swift'
+NeoBundleLazy 'sjl/gundo.vim'
 NeoBundleLazy 'Shougo/vimproc', {
   \ 'build': {
     \ 'mac': 'make -f make_mac.mak',
     \ 'unix': 'make -f make_unix.mak',
   \ },
 \ }
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'tpope/vim-surround'
-NeoBundleLazy 'toyamarinyon/vim-swift'
-NeoBundleLazy 'sjl/gundo.vim'
-NeoBundle 'kana/vim-submode'
-NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'takahirojin/gbr.vim'
-"NeoBundle 'miyakogi/conoline.vim'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/unite-outline'
 
 " Colorschemes
 "NeoBundle 'flazz/vim-colorschemes'
@@ -44,7 +44,8 @@ NeoBundle 'Shougo/unite-outline'
 "NeoBundle 'tomasr/molokai'
 "NeoBundle 'romainl/Apprentice'
 "NeoBundle 'itchyny/landscape.vim'
-NeoBundle 'nanotech/jellybeans.vim'
+"NeoBundle 'junegunn/seoul256.vim'
+"NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'rivayama/twiga.vim'
 
 call neobundle#end()
@@ -53,6 +54,8 @@ NeoBundleCheck
 
 syntax on
 colorscheme twiga
+
+" My color setting
 highlight Normal ctermbg=none
 highlight NonText ctermfg=238 ctermbg=232
 highlight SpecialKey ctermfg=238 ctermbg=232
@@ -61,30 +64,17 @@ highlight SpecialKey ctermfg=238 ctermbg=232
 " Plugius
 "----------------------------
 " Vim-QuickRun
-set splitright
+nnoremap <Space>qr :<C-u>QuickRun<CR>
 let g:quickrun_config = {
   \'_': {
     \ 'runner': 'vimproc',
     \ 'split': 'vertical',
     \ 'outputter/buffer/close_on_empty': 1,
   \ },
-  \ 'phpunit': {
-    \ 'outputter': 'phpunit',
-    \ 'command': 'phpunit',
-    \ 'exec': '%c %o %s',
-  \ },
-  \ 'swift': {
-    \ 'command': 'swift',
-    \ 'cmdopt': '-sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -i',
-  \ }
 \ }
-nnoremap <Space>qr :<C-u>QuickRun<CR>
 
 " Vim-fugitive
 nnoremap <Space>gs :<C-u>Gstatus<CR>
-nnoremap <Space>gd :<C-u>Gdiff<CR>
-nnoremap <Space>ga :<C-u>Gwrite<CR>
-nnoremap <Space>gc :<C-u>Gcommit<CR>
 nnoremap <Space>gp :<C-u>Git push origin<CR>
 autocmd QuickFixCmdPost *grep* cwindow
 
@@ -105,8 +95,6 @@ let g:lightline = {
 " Ctrl-p
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'ra' 
-nnoremap <Space>p :<C-u>CtrlPBookmarkDir<CR>
-nnoremap <Space>pa :<C-u>CtrlPBookmarkDirAdd
 
 " Gundo.vim
 nnoremap <Space>gu :GundoToggle<CR>
@@ -121,11 +109,7 @@ call submode#map('winsize', 'n', '', '<', '<C-w><')
 call submode#map('winsize', 'n', '', '+', '<C-w>+')
 call submode#map('winsize', 'n', '', '-', '<C-w>-')
 
-" Conoline.vim
-" let g:conoline_auto_enable = 1
-
 " Unite-outline
-" let g:unite_split_rule = 'botright'
 nnoremap <Space>uo :<C-u>Unite -vertical -no-quit -winwidth=40 outline<Return>
 
 "----------------------------
@@ -144,11 +128,10 @@ nnoremap <silent> <Space>ow :<C-u>setl wrap! wrap?<CR>
 nnoremap <silent> <Space>on :<C-u>setl number! number?<CR>
 nnoremap <silent> <Space>op :<C-u>setl paste! paste?<CR>
 
-let mapleader = "t"
-nnoremap <silent> <Leader>e :<C-u>tabedit tmp<CR>
-nnoremap <silent> <Leader>c :<C-u>tabclose<CR>
-nnoremap <silent> <Leader>n :<C-u>tabnext<CR>
-nnoremap <silent> <Leader>p :<C-u>tabprevious<CR>
+nnoremap <silent> <Space>e :<C-u>tabedit tmp<CR>
+nnoremap <silent> <Space>c :<C-u>tabclose<CR>
+nnoremap <silent> <Space>n :<C-u>tabnext<CR>
+nnoremap <silent> <Space>p :<C-u>tabprevious<CR>
 
 " Command-line mode:
 cnoremap <C-a> <Home>
@@ -170,6 +153,7 @@ set visualbell t_vb=
 set number
 set nowrap
 set autoindent
+set splitright
 
 set hlsearch
 set ignorecase
@@ -204,11 +188,6 @@ endif
 " Show Statusline
 set laststatus=2
 
-" For Go Lang
-if $GOROOT != ''
-  set rtp+=$GOROOT/misc/vim
-endif
-
 " Rename or copy file
 function! s:move(file, act) 
   let file = a:file
@@ -237,7 +216,7 @@ command! -nargs=1 -complete=file MoveFile call s:move(<q-args>, 'mv')
 nnoremap <Space>cp :<C-u>CopyFile<Space>
 nnoremap <Space>mv :<C-u>MoveFile<Space>
 
-" diff
+" Use better diff
 set diffexpr=MyDiff()
 function! MyDiff()
   let opt = ""
@@ -272,4 +251,3 @@ if has("autocmd")
   autocmd FileType php setlocal ts=4 sts=4 sw=4 noexpandtab
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
 endif
-
