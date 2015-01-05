@@ -20,6 +20,7 @@ NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'takahirojin/gbr.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/unite-outline'
+NeoBundle 'amdt/vim-niji'
 
 NeoBundleLazy 'toyamarinyon/vim-swift'
 NeoBundleLazy 'sjl/gundo.vim'
