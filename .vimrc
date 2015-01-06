@@ -128,13 +128,13 @@ endif
 nnoremap <silent> <Space>ow :<C-u>setl wrap! wrap?<CR>
 nnoremap <silent> <Space>on :<C-u>setl number! number?<CR>
 nnoremap <silent> <Space>op :<C-u>setl paste! paste?<CR>
-
 nnoremap <silent> <Esc><Esc> :<C-u>setl hlsearch! hlsearch?<Return>
 
-nnoremap <silent> <Space>te :<C-u>tabedit tmp<CR>
-nnoremap <silent> <Space>tc :<C-u>tabclose<CR>
-nnoremap <silent> <Space>tn :<C-u>tabnext<CR>
-nnoremap <silent> <Space>tp :<C-u>tabprevious<CR>
+let mapleader = "t"
+nnoremap <silent> <Leader>e :<C-u>tabedit .tmp<CR>
+nnoremap <silent> <Leader>c :<C-u>tabclose<CR>
+nnoremap <silent> <Leader>n :<C-u>tabnext<CR>
+nnoremap <silent> <Leader>p :<C-u>tabprevious<CR>
 
 " Command-line mode:
 cnoremap <C-a> <Home>
