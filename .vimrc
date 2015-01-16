@@ -76,6 +76,7 @@ let g:quickrun_config = {
 
 " Vim-fugitive
 nnoremap <Space>gs :<C-u>Gstatus<CR>
+nnoremap <Space>gl :<C-u>Glog --<CR>
 nnoremap <Space>gp :<C-u>Git push origin<CR>
 autocmd QuickFixCmdPost *grep* cwindow
 
@@ -135,6 +136,10 @@ nnoremap <silent> <Leader>e :<C-u>tabedit .tmp<CR>
 nnoremap <silent> <Leader>c :<C-u>tabclose<CR>
 nnoremap <silent> <Leader>n :<C-u>tabnext<CR>
 nnoremap <silent> <Leader>p :<C-u>tabprevious<CR>
+
+" Keep cursor position after add/remove an indent
+nnoremap >> :<C-u>><CR><C-o>
+nnoremap << :<C-u><<CR><C-o>
 
 " Command-line mode:
 cnoremap <C-a> <Home>
