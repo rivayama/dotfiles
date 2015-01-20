@@ -79,6 +79,7 @@ nnoremap <Space>qr :<C-u>QuickRun<CR>
 
 " Vim-fugitive
 nnoremap <Space>gs :<C-u>Gstatus<CR>
+nnoremap <Space>gl :<C-u>Glog --<CR>
 nnoremap <Space>gp :<C-u>Git push origin<CR>
 autocmd QuickFixCmdPost *grep* cwindow
 
@@ -131,11 +132,17 @@ endif
 nnoremap <silent> <Space>ow :<C-u>setl wrap! wrap?<CR>
 nnoremap <silent> <Space>on :<C-u>setl number! number?<CR>
 nnoremap <silent> <Space>op :<C-u>setl paste! paste?<CR>
+nnoremap <silent> <Esc><Esc> :<C-u>setl hlsearch! hlsearch?<Return>
 
-nnoremap <silent> <Space>e :<C-u>tabedit tmp<CR>
-nnoremap <silent> <Space>c :<C-u>tabclose<CR>
-nnoremap <silent> <Space>n :<C-u>tabnext<CR>
-nnoremap <silent> <Space>p :<C-u>tabprevious<CR>
+let mapleader = "t"
+nnoremap <silent> <Leader>e :<C-u>tabedit .tmp<CR>
+nnoremap <silent> <Leader>c :<C-u>tabclose<CR>
+nnoremap <silent> <Leader>n :<C-u>tabnext<CR>
+nnoremap <silent> <Leader>p :<C-u>tabprevious<CR>
+
+" Keep cursor position after add/remove an indent
+nnoremap >> :<C-u>><CR><C-o>
+nnoremap << :<C-u><<CR><C-o>
 
 " Command-line mode:
 cnoremap <C-a> <Home>
