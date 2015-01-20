@@ -20,16 +20,19 @@ NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'takahirojin/gbr.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/unite-outline'
-NeoBundle 'amdt/vim-niji'
 
 NeoBundleLazy 'toyamarinyon/vim-swift'
 NeoBundleLazy 'sjl/gundo.vim'
-NeoBundleLazy 'Shougo/vimproc', {
-  \ 'build': {
-    \ 'mac': 'make -f make_mac.mak',
-    \ 'unix': 'make -f make_unix.mak',
-  \ },
-\ }
+" NeoBundleLazy 'Shougo/vimproc', {
+"   \ 'build': {
+"     \ 'mac': 'make -f make_mac.mak',
+"     \ 'unix': 'make -f make_unix.mak',
+"   \ },
+" \ }
+
+" For Scheme
+NeoBundle 'amdt/vim-niji'
+NeoBundle 'aharisu/vim_goshrepl'
 
 " Colorschemes
 "NeoBundle 'flazz/vim-colorschemes'
@@ -66,13 +69,13 @@ highlight SpecialKey ctermfg=238 ctermbg=232
 "----------------------------
 " Vim-QuickRun
 nnoremap <Space>qr :<C-u>QuickRun<CR>
-let g:quickrun_config = {
-  \'_': {
-    \ 'runner': 'vimproc',
-    \ 'split': 'vertical',
-    \ 'outputter/buffer/close_on_empty': 1,
-  \ },
-\ }
+" let g:quickrun_config = {
+"   \'_': {
+"     \ 'runner': 'vimproc',
+"     \ 'split': 'vertical',
+"     \ 'outputter/buffer/close_on_empty': 1,
+"   \ },
+" \ }
 
 " Vim-fugitive
 nnoremap <Space>gs :<C-u>Gstatus<CR>
