@@ -138,8 +138,8 @@ nnoremap <silent> <Leader>n :<C-u>tabnext<CR>
 nnoremap <silent> <Leader>p :<C-u>tabprevious<CR>
 
 " Keep cursor position after add/remove an indent
-nnoremap >> :<C-u>><CR><C-o>
-nnoremap << :<C-u><<CR><C-o>
+nnoremap >> :<C-u>><CR><C-o>l
+nnoremap << :<C-u><<CR><C-o>h
 
 " Command-line mode:
 cnoremap <C-a> <Home>
