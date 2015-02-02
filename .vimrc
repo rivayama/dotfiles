@@ -132,7 +132,7 @@ endif
 nnoremap <silent> <Space>ow :<C-u>setl wrap! wrap?<CR>
 nnoremap <silent> <Space>on :<C-u>setl number! number?<CR>
 nnoremap <silent> <Space>op :<C-u>setl paste! paste?<CR>
-nnoremap <silent> <Esc><Esc> :<C-u>setl hlsearch! hlsearch?<Return>
+nnoremap <silent> <Esc><Esc> :<C-u>nohl<CR>
 
 let mapleader = "t"
 nnoremap <silent> <Leader>e :<C-u>tabedit .tmp<CR>
