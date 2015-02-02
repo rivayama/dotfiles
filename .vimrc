@@ -20,15 +20,18 @@ NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'takahirojin/gbr.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/unite-outline'
+NeoBundle 'JulesWang/css.vim'
+NeoBundle 'hail2u/vim-css3-syntax'
 
 NeoBundleLazy 'toyamarinyon/vim-swift'
 NeoBundleLazy 'sjl/gundo.vim'
-" NeoBundleLazy 'Shougo/vimproc', {
-"   \ 'build': {
-"     \ 'mac': 'make -f make_mac.mak',
-"     \ 'unix': 'make -f make_unix.mak',
-"   \ },
-" \ }
+
+NeoBundle 'Shougo/vimproc', {
+  \ 'build': {
+    \ 'mac': 'make -f make_mac.mak',
+    \ 'unix': 'make -f make_unix.mak',
+  \ },
+\ }
 
 " For Scheme
 NeoBundle 'amdt/vim-niji'
@@ -69,13 +72,16 @@ highlight SpecialKey ctermfg=238 ctermbg=232
 "----------------------------
 " Vim-QuickRun
 nnoremap <Space>qr :<C-u>QuickRun<CR>
-" let g:quickrun_config = {
-"   \'_': {
-"     \ 'runner': 'vimproc',
-"     \ 'split': 'vertical',
-"     \ 'outputter/buffer/close_on_empty': 1,
-"   \ },
-" \ }
+let g:quickrun_config = {
+  \'_': {
+    \ 'runner': 'vimproc',
+    \ 'split': 'vertical',
+    \ 'outputter/buffer/close_on_empty': 1,
+  \ },
+\ }
+
+" Vim-GoshREPL
+nnoremap <Space>gr :<C-u>GoshREPLWithBuffer<CR>
 
 " Vim-fugitive
 nnoremap <Space>gs :<C-u>Gstatus<CR>
@@ -251,6 +257,7 @@ if has("autocmd")
   autocmd BufRead,BufNewFile *.json set filetype=javascript
   autocmd FileType sh setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType vim setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType scheme setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType xhtml setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
