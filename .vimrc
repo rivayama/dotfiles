@@ -22,6 +22,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'JulesWang/css.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'junegunn/vim-easy-align'
 
 NeoBundleLazy 'toyamarinyon/vim-swift'
 NeoBundleLazy 'sjl/gundo.vim'
@@ -122,6 +123,10 @@ call submode#map('winsize', 'n', '', '-', '<C-w>-')
 
 " Unite-outline
 nnoremap <Space>uo :<C-u>Unite -vertical -no-quit -winwidth=40 outline<Return>
+
+" vim-easy-align
+vmap <Enter> <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 "----------------------------
 " Key-mapping
