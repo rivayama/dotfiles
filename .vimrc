@@ -167,6 +167,10 @@ cnoremap <C-p> <Up>
 cnoremap <C-k> <C-\>e getcmdpos() == 1 ? '' : getcmdline()[:getcmdpos()-2]<CR>
 cnoremap <C-y> <C-r>"
 
+" Syntax
+nnoremap <silent> <Space>ht :<C-u>so $VIMRUNTIME/syntax/hitest.vim<CR>
+nnoremap <silent> <Space>ct :<C-u>so $VIMRUNTIME/syntax/colortest.vim<CR>
+
 "----------------------------
 " Basics
 "----------------------------
