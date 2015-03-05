@@ -126,7 +126,6 @@ nnoremap <Space>uo :<C-u>Unite -vertical -no-quit -winwidth=40 outline<Return>
 
 " vim-easy-align
 vmap <Enter> <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
 
 "----------------------------
 " Key-mapping
