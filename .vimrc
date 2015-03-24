@@ -170,6 +170,10 @@ cnoremap <C-y> <C-r>"
 nnoremap <silent> <Space>th :<C-u>so $VIMRUNTIME/syntax/hitest.vim<CR>
 nnoremap <silent> <Space>tc :<C-u>so $VIMRUNTIME/syntax/colortest.vim<CR>
 
+" Expand/compress CSS
+nnoremap <silent> <Space>cx :<C-u>%s/{/{\r/g<CR>:%s/}/}\r/g<CR>:%s/;/;\r/g<CR>
+nnoremap <silent> <Space>cc :<C-u>%s/\n//g<CR>
+
 "----------------------------
 " Basics
 "----------------------------
@@ -222,7 +226,7 @@ function! s:move(file, act)
   endif
   if filereadable(file)
     echo '"' . file . '"is already exists. Overwrite? [y/N]' 
-    if getchar() !=? 'y'
+    if nr2char(getchar()) !=? 'y'
       echo "Aborted..."
       return
     endif
