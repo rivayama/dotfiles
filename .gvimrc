@@ -1,10 +1,6 @@
 " Color scheme
 colorscheme desert
 
-" Invisible character colors
-"highlight NonText guifg=black
-"highlight SpecialKey guifg=black
-
 " Window Size
 set columns=80
 set lines=48
@@ -42,9 +38,6 @@ if has('win32') && has('gui_running')
   set guifont=MS_Gothic:h10:cSHIFTJIS
 
 endif
-
-" highlight NonText guifg=238 guibg=232
-" highlight SpecialKey guifg=238 guibg=232
 
 highlight NonText guifg=#585858 guibg=#3a3a3a
 highlight SpecialKey guifg=#585858 guibg=#3a3a3a
