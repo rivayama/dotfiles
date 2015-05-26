@@ -107,6 +107,7 @@ let g:lightline = {
 " Ctrl-p
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'ra' 
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " Gundo.vim
 nnoremap <Space>gu :GundoToggle<CR>

@@ -19,3 +19,6 @@ fi
 if [ -x "`which rbenv 2> /dev/null`" ]; then
 	eval "$(rbenv init -)"
 fi
+
+# added by travis gem
+[ -f /Users/kawayama/.travis/travis.sh ] && source /Users/kawayama/.travis/travis.sh

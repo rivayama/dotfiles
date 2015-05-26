@@ -22,6 +22,12 @@ set guioptions-=L
 " Unset auto line change
 set textwidth=0
 
+" Ctrl-U
+"nnoremap <C-u> :<Up>
+
+set showtabline=2
+set guioptions-=e
+
 "----------------------------
 " Win GUI Setting
 "----------------------------
