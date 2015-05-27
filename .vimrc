@@ -128,6 +128,14 @@ nnoremap <Space>uo :<C-u>Unite -vertical -no-quit -winwidth=40 outline<Return>
 " vim-easy-align
 vmap <Enter> <Plug>(EasyAlign)
 
+" QFixHowm
+set runtimepath+=~/.qfixapp
+let QFixHowm_Key = 'g'
+let howm_dir          = '~/.howm'
+let howm_filename     = '%Y/%m/%Y-%m-%d-%H%M%S.txt'
+let howm_fileencoding = 'utf-8'
+let howm_fileformat   = 'unix'
+
 "----------------------------
 " Key-mapping
 "----------------------------

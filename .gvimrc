@@ -2,8 +2,8 @@
 colorscheme desert
 
 " Window Size
-set columns=80
-set lines=48
+set columns=120
+set lines=60
 
 " Command Line Height
 set cmdheight=1
@@ -22,9 +22,13 @@ set guioptions-=L
 " Unset auto line change
 set textwidth=0
 
+" Undofile
+set undodir=/tmp
+
 " Ctrl-U
 "nnoremap <C-u> :<Up>
 
+" Show tabline
 set showtabline=2
 set guioptions-=e
 
