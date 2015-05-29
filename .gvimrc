@@ -1,13 +1,9 @@
 " Color scheme
 colorscheme desert
 
-" Invisible character colors
-"highlight NonText guifg=black
-"highlight SpecialKey guifg=black
-
 " Window Size
-set columns=80
-set lines=48
+set columns=120
+set lines=60
 
 " Command Line Height
 set cmdheight=1
@@ -26,6 +22,16 @@ set guioptions-=L
 " Unset auto line change
 set textwidth=0
 
+" Undofile
+set undodir=/tmp
+
+" Ctrl-U
+"nnoremap <C-u> :<Up>
+
+" Show tabline
+set showtabline=2
+set guioptions-=e
+
 "----------------------------
 " Win GUI Setting
 "----------------------------
@@ -42,9 +48,6 @@ if has('win32') && has('gui_running')
   set guifont=MS_Gothic:h10:cSHIFTJIS
 
 endif
-
-" highlight NonText guifg=238 guibg=232
-" highlight SpecialKey guifg=238 guibg=232
 
 highlight NonText guifg=#585858 guibg=#3a3a3a
 highlight SpecialKey guifg=#585858 guibg=#3a3a3a

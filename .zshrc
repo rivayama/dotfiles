@@ -125,3 +125,10 @@ export EDITOR='vim'
 export DOCKER_HOST=tcp://127.0.0.1:4243
 
 [[ -s /Library/Ruby/Gems/2.0.0/gems/tmuxinator-0.6.8/completion/tmuxinator.zsh ]] && source /Library/Ruby/Gems/2.0.0/gems/tmuxinator-0.6.8/completion/tmuxinator.zsh
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# added by travis gem
+[ -f /Users/kawayama/.travis/travis.sh ] && source /Users/kawayama/.travis/travis.sh

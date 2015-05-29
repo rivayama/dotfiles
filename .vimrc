@@ -108,6 +108,7 @@ let g:lightline = {
 " Ctrl-p
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'ra' 
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " Gundo.vim
 nnoremap <Space>gu :GundoToggle<CR>
@@ -127,6 +128,14 @@ nnoremap <Space>uo :<C-u>Unite -vertical -no-quit -winwidth=40 outline<Return>
 
 " vim-easy-align
 vmap <Enter> <Plug>(EasyAlign)
+
+" QFixHowm
+set runtimepath+=~/.qfixapp
+let QFixHowm_Key = 'g'
+let howm_dir          = '~/.howm'
+let howm_filename     = '%Y/%m/%Y-%m-%d-%H%M%S.txt'
+let howm_fileencoding = 'utf-8'
+let howm_fileformat   = 'unix'
 
 "----------------------------
 " Key-mapping
@@ -275,10 +284,10 @@ if has("autocmd")
   autocmd FileType xhtml setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType eruby setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType css setlocal ts=4 sts=4 sw=4 noexpandtab
+  autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType scss setlocal ts=4 sts=4 sw=4 noexpandtab
   autocmd FileType swift setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType php setlocal ts=4 sts=4 sw=4 noexpandtab
-  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
 endif
