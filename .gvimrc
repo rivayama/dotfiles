@@ -2,8 +2,8 @@
 colorscheme desert
 
 " Window Size
-set columns=120
-set lines=60
+set columns=96
+set lines=58
 
 " Command Line Height
 set cmdheight=1
@@ -31,6 +31,14 @@ set undodir=/tmp
 " Show tabline
 set showtabline=2
 set guioptions-=e
+
+" textwidthの再設定
+au Filetype qfix_memo setlocal textwidth=0
+
+" Qfixhowm
+nnoremap <Space>mc :<C-U>call qfixmemo#EditNew()<CR>
+nnoremap <Space>ml :<C-U>call qfixmemo#ListCmd()<CR>
+
 
 "----------------------------
 " Win GUI Setting
