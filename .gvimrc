@@ -37,8 +37,7 @@ au Filetype qfix_memo setlocal textwidth=0
 
 " Qfixhowm
 nnoremap <Space>mc :<C-U>call qfixmemo#EditNew()<CR>
-nnoremap <Space>ml :<C-U>call qfixmemo#ListCmd()<CR>
-
+nnoremap <Space>ml :<C-U>call qfixmemo#ListCmd("nocache")<CR>
 
 "----------------------------
 " Win GUI Setting
