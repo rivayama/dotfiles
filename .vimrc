@@ -54,7 +54,9 @@ NeoBundle 'aharisu/vim_goshrepl'
 "NeoBundle 'octol/vombatidae-vim'
 "NeoBundle 'itchyny/landscape.vim'
 "NeoBundle 'junegunn/seoul256.vim'
-"NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'gosukiwi/vim-atom-dark'
+NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'rivayama/twiga.vim'
 
 call neobundle#end()
@@ -140,6 +142,16 @@ let howm_filename     = '%Y/%m/%Y-%m-%d-%H%M%S.txt'
 let howm_fileencoding = 'utf-8'
 let howm_fileformat   = 'unix'
 
+" Gbr.vim
+" let g:gbr_no_default_key_mappings = 1
+" nnoremap <silent> <buffer> <CR> :<C-u>call gbr#checkout()<CR>
+" nnoremap <silent> <buffer> c :<C-u>call gbr#create("c")<CR>
+" nnoremap <silent> <buffer> cc :<C-u>call gbr#create("cc")<CR>
+" nnoremap <silent> <buffer> C :<C-u>call gbr#create("C")<CR>
+" nnoremap <silent> <buffer> d :<C-u>call gbr#delete("-d")<CR>
+" nnoremap <silent> <buffer> D :<C-u>call gbr#delete("-D")<CR>
+" nnoremap <silent> <buffer> Q :<C-u>bdelete!<CR>
+
 "----------------------------
 " Key-mapping
 "----------------------------
@@ -196,6 +208,7 @@ set number
 set nowrap
 set autoindent
 set splitright
+set ambiwidth=double
 
 set hlsearch
 set ignorecase

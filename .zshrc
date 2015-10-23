@@ -59,6 +59,11 @@ function gnewbranch() {
   echo "Create branch \"$1\""
 }
 
+alias -g H='| head'
+alias -g G='| grep'
+alias -g C='| ccze'
+alias -g W='| wc'
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
