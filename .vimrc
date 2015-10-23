@@ -105,6 +105,8 @@ let g:lightline = {
   \ },
 \ }
 
+call twiga#lightline()
+
 " Ctrl-p
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'ra' 
@@ -146,7 +148,7 @@ if has('gui_running')
   nnoremap <Space>ve :<C-u>split $MYGVIMRC<CR>
   nnoremap <Space>vr :<C-u>source $MYGVIMRC<CR>
 else
-  nnoremap <Space>ve :<C-u>split $MYVIMRC<CR>
+  nnoremap <Space>ve :<C-u>vsplit $MYVIMRC<CR>
   nnoremap <Space>vr :<C-u>source $MYVIMRC<CR>
 endif
 
