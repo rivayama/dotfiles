@@ -23,8 +23,8 @@ NeoBundle 'Shougo/unite-outline'
 NeoBundle 'JulesWang/css.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'junegunn/vim-easy-align'
+NeoBundle 'toyamarinyon/vim-swift'
 
-NeoBundleLazy 'toyamarinyon/vim-swift'
 NeoBundleLazy 'sjl/gundo.vim'
 
 NeoBundle 'Shougo/vimproc', {
