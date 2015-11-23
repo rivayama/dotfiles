@@ -199,6 +199,11 @@ nnoremap <silent> <Space>tc :<C-u>so $VIMRUNTIME/syntax/colortest.vim<CR>
 nnoremap <silent> <Space>cx :<C-u>%s/{/{\r/g<CR>:%s/}/}\r/g<CR>:%s/;/;\r/g<CR>
 nnoremap <silent> <Space>cc :<C-u>%s/\n//g<CR>
 
+" Indentation
+nnoremap <silent> <Space>t2 :<C-u>setl tabstop=2 softtabstop=2 shiftwidth=2<CR>
+nnoremap <silent> <Space>t4 :<C-u>setl tabstop=4 softtabstop=4 shiftwidth=4<CR>
+nnoremap <silent> <Space>t8 :<C-u>setl tabstop=8 softtabstop=8 shiftwidth=8<CR>
+
 "----------------------------
 " Basics
 "----------------------------

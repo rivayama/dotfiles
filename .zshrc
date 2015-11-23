@@ -47,7 +47,7 @@ function rmswp() {
 }
 
 ##### add-branch #####
-function gnewbranch() {
+function git-newbranch() {
   if [ -z "$1" ]; then
     echo "Tell me new branch name!"
     return
