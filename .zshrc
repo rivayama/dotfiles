@@ -15,8 +15,8 @@ export ZSH=$HOME/.oh-my-zsh
 # ZSH_THEME="mgutz"        # ピンク 右ディレクトリ
 # ZSH_THEME="wezm+"        # 右ディレクトリ
 #-------------------------------------------------------
-# ZSH_THEME="robbyrussell" # zshらしい シンプル
-ZSH_THEME="muse"         # いろんな記号
+ZSH_THEME="robbyrussell" # zshらしい シンプル
+# ZSH_THEME="muse"         # いろんな記号
 #-------------------------------------------------------
 # ZSH_THEME="obraun"       # 時間つき一行 ちょっとごちゃごちゃ？
 # ZSH_THEME="afowler"      # ちょっと複雑なbash
