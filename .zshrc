@@ -5,7 +5,25 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+
+#-------------------------------------------------------
+# ZSH_THEME="arrow"        # アロー! 右ブランチ
+# ZSH_THEME="nicoulaj"     # 超シンプル 右ブランチ
+# ZSH_THEME="mrtazz"       # 右ブランチ
+#-------------------------------------------------------
+# ZSH_THEME="kennethreitz" # zshぽさある 右ディレクトリ
+# ZSH_THEME="mgutz"        # ピンク 右ディレクトリ
+# ZSH_THEME="wezm+"        # 右ディレクトリ
+#-------------------------------------------------------
+# ZSH_THEME="robbyrussell" # zshらしい シンプル
+ZSH_THEME="muse"         # いろんな記号
+#-------------------------------------------------------
+# ZSH_THEME="obraun"       # 時間つき一行 ちょっとごちゃごちゃ？
+# ZSH_THEME="afowler"      # ちょっと複雑なbash
+# ZSH_THEME="lukerandall"  # ちょっと複雑なbash
+# ZSH_THEME="geoffgarside" # 時間つき一行
+#-------------------------------------------------------
+
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 # Example aliases
