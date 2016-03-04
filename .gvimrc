@@ -2,7 +2,7 @@
 colorscheme desert
 
 " Window Size
-set columns=96
+set columns=106
 set lines=58
 
 " Command Line Height
@@ -13,7 +13,7 @@ set noswapfile
 set nobackup
 
 " Font
-set guifont=Menlo-Regular:h13
+set guifont=Consolas:h13
 
 " Hide Scrollbar on both side
 set guioptions-=r
