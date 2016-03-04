@@ -213,7 +213,7 @@ set number
 set nowrap
 set autoindent
 set splitright
-set ambiwidth=double
+" set ambiwidth=double
 
 set hlsearch
 set ignorecase
