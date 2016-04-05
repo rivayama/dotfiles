@@ -80,6 +80,7 @@ highlight SpecialKey ctermfg=238 ctermbg=232
 "----------------------------
 " Vim-QuickRun
 nnoremap <Space>qr :<C-u>QuickRun<CR>
+nnoremap <Space>qa :<C-u>QuickRun -args 
 let g:quickrun_config = {
   \'_': {
     \ 'runner': 'vimproc',
@@ -311,7 +312,7 @@ if has("autocmd")
   autocmd FileType xhtml setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType eruby setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType scss setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType swift setlocal ts=4 sts=4 sw=4 expandtab
