@@ -2,8 +2,8 @@
 colorscheme desert
 
 " Window Size
-set columns=106
-set lines=58
+set columns=100
+set lines=60
 
 " Command Line Height
 set cmdheight=1

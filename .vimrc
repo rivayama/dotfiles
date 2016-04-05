@@ -24,6 +24,8 @@ NeoBundle 'JulesWang/css.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'toyamarinyon/vim-swift'
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'mattn/gist-vim'
 
 NeoBundleLazy 'sjl/gundo.vim'
 
@@ -152,6 +154,9 @@ let howm_fileformat   = 'unix'
 " nnoremap <silent> <buffer> d :<C-u>call gbr#delete("-d")<CR>
 " nnoremap <silent> <buffer> D :<C-u>call gbr#delete("-D")<CR>
 " nnoremap <silent> <buffer> Q :<C-u>bdelete!<CR>
+
+" gist-vim
+let g:gist_post_private = 1
 
 "----------------------------
 " Key-mapping
@@ -308,7 +313,7 @@ if has("autocmd")
   autocmd FileType eruby setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType scss setlocal ts=4 sts=4 sw=4 noexpandtab
+  autocmd FileType scss setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType swift setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType php setlocal ts=4 sts=4 sw=4 noexpandtab
