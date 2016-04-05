@@ -25,6 +25,10 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'toyamarinyon/vim-swift'
 
+" let g:loaded_matchparen = 1
+" NeoBundle 'itchyny/vim-parenmatch'
+" NeoBundle 'itchyny/vim-cursorword'
+
 NeoBundleLazy 'sjl/gundo.vim'
 
 NeoBundle 'Shougo/vimproc', {
@@ -164,9 +168,11 @@ else
   nnoremap <Space>vr :<C-u>source $MYVIMRC<CR>
 endif
 
+nnoremap <silent> <Space>oc :<C-u>set number! list!<CR>
 nnoremap <silent> <Space>ow :<C-u>setl wrap! wrap?<CR>
 nnoremap <silent> <Space>on :<C-u>setl number! number?<CR>
 nnoremap <silent> <Space>op :<C-u>setl paste! paste?<CR>
+nnoremap <silent> <Space>oe :<C-u>setl expandtab! expandtab?<CR>
 nnoremap <silent> <Esc><Esc> :<C-u>nohl<CR>
 
 let mapleader = "t"
@@ -307,7 +313,7 @@ if has("autocmd")
   autocmd FileType eruby setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType scss setlocal ts=4 sts=4 sw=4 noexpandtab
+  autocmd FileType scss setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType swift setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType php setlocal ts=4 sts=4 sw=4 noexpandtab

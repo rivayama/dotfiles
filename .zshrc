@@ -72,7 +72,7 @@ function git-newbranch() {
   fi
   git fetch
   git checkout master
-  git pull
+  git pull origin master
   git checkout -b "$1"
   echo "Create branch \"$1\""
 }
