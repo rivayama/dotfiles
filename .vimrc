@@ -27,6 +27,10 @@ NeoBundle 'toyamarinyon/vim-swift'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'mattn/gist-vim'
 
+" let g:loaded_matchparen = 1
+" NeoBundle 'itchyny/vim-parenmatch'
+" NeoBundle 'itchyny/vim-cursorword'
+
 NeoBundleLazy 'sjl/gundo.vim'
 
 NeoBundle 'Shougo/vimproc', {
@@ -170,9 +174,11 @@ else
   nnoremap <Space>vr :<C-u>source $MYVIMRC<CR>
 endif
 
+nnoremap <silent> <Space>oc :<C-u>set number! list!<CR>
 nnoremap <silent> <Space>ow :<C-u>setl wrap! wrap?<CR>
 nnoremap <silent> <Space>on :<C-u>setl number! number?<CR>
 nnoremap <silent> <Space>op :<C-u>setl paste! paste?<CR>
+nnoremap <silent> <Space>oe :<C-u>setl expandtab! expandtab?<CR>
 nnoremap <silent> <Esc><Esc> :<C-u>nohl<CR>
 
 let mapleader = "t"
