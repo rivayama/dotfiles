@@ -1,89 +1,20 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH=/Users/kawayama/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-
-#-------------------------------------------------------
-# ZSH_THEME="arrow"        # アロー! 右ブランチ
-# ZSH_THEME="nicoulaj"     # 超シンプル 右ブランチ
-# ZSH_THEME="mrtazz"       # 右ブランチ
-#-------------------------------------------------------
-# ZSH_THEME="kennethreitz" # zshぽさある 右ディレクトリ
-# ZSH_THEME="mgutz"        # ピンク 右ディレクトリ
-# ZSH_THEME="wezm+"        # 右ディレクトリ
-#-------------------------------------------------------
-ZSH_THEME="robbyrussell" # zshらしい シンプル
-# ZSH_THEME="muse"         # いろんな記号
-#-------------------------------------------------------
-# ZSH_THEME="obraun"       # 時間つき一行 ちょっとごちゃごちゃ？
-# ZSH_THEME="afowler"      # ちょっと複雑なbash
-# ZSH_THEME="lukerandall"  # ちょっと複雑なbash
-# ZSH_THEME="geoffgarside" # 時間つき一行
-#-------------------------------------------------------
-
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-function vwrap() {
-  if [ $1 = 'st' ]; then
-    shift
-    \vagrant status $@
-  elif [ $1 = 'hl' ]; then
-    shift
-    \vagrant halt $@
-  else
-    \vagrant $@
-  fi
-}
-alias vagrant=vwrap
-alias v=vagrant
-alias g=git
-
-##### peco-cd #####
-function pcd() {
-  local dir=$(find . -type d | peco)
-  cd ${dir}
-}
-
-##### peco-cp #####
-function pcp() {
-  local file=$(find . -type f | peco)
-  local dest=$(find . -type d | peco)
-  cp ${file} ${dest}
-  echo "cp ${file} ${dest}"
-}
-
-##### remove-swp #####
-function rmswp() {
-  find ./ -name "*.swp"
-  find ./ -name "*.swp" | xargs rm
-}
-
-##### add-branch #####
-function git-newbranch() {
-  if [ -z "$1" ]; then
-    echo "Tell me new branch name!"
-    return
-  fi
-  git fetch
-  git checkout master
-  git pull origin master
-  git checkout -b "$1"
-  echo "Create branch \"$1\""
-}
-
-alias -g H='| head'
-alias -g G='| grep'
-alias -g C='| ccze'
-alias -g W='| wc'
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -97,8 +28,8 @@ alias -g W='| wc'
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-# Uncomment the following line to disable command auto-correction.
-# DISABLE_CORRECTION="true"
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -119,13 +50,13 @@ alias -g W='| wc'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git docker)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -143,14 +74,22 @@ export EDITOR='vim'
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-export DOCKER_HOST=tcp://127.0.0.1:4243
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-[[ -s /Library/Ruby/Gems/2.0.0/gems/tmuxinator-0.6.8/completion/tmuxinator.zsh ]] && source /Library/Ruby/Gems/2.0.0/gems/tmuxinator-0.6.8/completion/tmuxinator.zsh
-
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-# added by travis gem
-[ -f /Users/kawayama/.travis/travis.sh ] && source /Users/kawayama/.travis/travis.sh
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vi="vim"
+alias g="git"
+alias be="bundle exec"
+alias bi="bundle install"
+alias bu="bundle update"
+alias ni="npm install"
+alias nr="npm run"
+alias nt="npm test"
+alias mux="tmuxinator"
