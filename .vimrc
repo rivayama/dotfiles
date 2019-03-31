@@ -1,12 +1,16 @@
 if &compatible
   set nocompatible
 endif
-set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-call dein#begin(expand('~/.vim/dein'))
+call dein#begin(expand('~/.cache/dein'))
 call dein#add('Shougo/dein.vim')
-call dein#add('tpope/vim-fugitive')
 call dein#add('kien/ctrlp.vim')
+call dein#add('rking/ag.vim')
+call dein#add('tpope/vim-fugitive')
+call dein#add('tpope/vim-rhubarb')
+call dein#add('tpope/vim-dispatch')
+call dein#add('thoughtbot/vim-rspec')
 call dein#add('scrooloose/nerdtree')
 call dein#add('kana/vim-submode')
 call dein#add('chrisbra/vim-diff-enhanced')
@@ -15,10 +19,7 @@ call dein#add('tomtom/tcomment_vim')
 call dein#add('itchyny/lightline.vim')
 call dein#add('rivayama/twiga.vim')
 call dein#add('nanotech/jellybeans.vim')
-call dein#add('tpope/vim-dispatch')
-call dein#add('thoughtbot/vim-rspec')
 call dein#add('mxw/vim-jsx')
-call dein#add('rking/ag.vim')
 call dein#end()
 
 syntax on
@@ -32,7 +33,7 @@ nnoremap <Space>gs :<C-u>Gstatus<CR>
 nnoremap <Space>gb :<C-u>Gbrowse<CR>
 nnoremap <Space>gw :<C-u>Gwrite<CR>
 nnoremap <Space>gl :<C-u>Glog --<CR>
-nnoremap <Space>gp :<C-u>Git push origin<CR>
+nnoremap <Space>gp :<C-u>Git push origin --no-verify<CR>
 autocmd QuickFixCmdPost *grep* cwindow
 
 " lightline.vim
@@ -42,11 +43,13 @@ let g:lightline = {
   \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
   \ },
   \ 'component': {
-  \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}',
+  \   'fugitive': '%{exists("*fugitive#head")?"\ue0a0 ".fugitive#head():""}',
   \ },
   \ 'component_visible_condition': {
   \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())',
   \ },
+  \ 'separator':    { 'left': "\ue0b0", 'right': "\ue0b2" },
+  \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
 \ }
 call twiga#lightline()
 
@@ -72,7 +75,9 @@ let g:rspec_command = "Dispatch bundle exec rspec {spec}"
 nmap <silent><leader>f :call RunCurrentSpecFile()<CR>
 nmap <silent><leader>c :call RunNearestSpec()<CR>
 nmap <silent><leader>l :call RunLastSpec()<CR>
-nmap <silent><leader>a :call RunAllSpecs()<CR>
+
+nnoremap <silent><Space>] :<C-u>vertical resize +30<CR>
+nnoremap <silent><Space>[ :<C-u>vertical resize -30<CR>
 
 " vim-submode
 call submode#enter_with('winsize', 'n', '', '<C-w>>', '<C-w>>')
@@ -96,7 +101,7 @@ else
   nnoremap <Space>vr :<C-u>source $MYVIMRC<CR>
 endif
 
-nnoremap <Space>p :CtrlP ../
+nnoremap <Space>p :CtrlP ./
 
 nnoremap <silent> <Space>oc :<C-u>set number! list!<CR>
 nnoremap <silent> <Space>ow :<C-u>setl wrap! wrap?<CR>
@@ -110,6 +115,9 @@ nnoremap <silent> <Leader>e :<C-u>tabedit .tmp<CR>
 nnoremap <silent> <Leader>c :<C-u>tabclose<CR>
 nnoremap <silent> <Leader>n :<C-u>tabnext<CR>
 nnoremap <silent> <Leader>p :<C-u>tabprevious<CR>
+
+nnoremap <C-]> g<C-]>
+nnoremap <C-[> :pop<CR>
 
 " Command-line mode:
 cnoremap <C-a> <Home>
@@ -214,8 +222,11 @@ if has("autocmd")
   autocmd BufRead,BufNewFile *.coffee set filetype=ruby
   autocmd BufRead,BufNewFile *.slim set filetype=ruby
   autocmd BufRead,BufNewFile *.json set filetype=javascript
+  autocmd BufRead,BufNewFile *.ts set filetype=javascript
+  autocmd BufRead,BufNewFile *.tsx set filetype=javascript
   autocmd BufRead,BufNewFile *.conf set filetype=conf
   autocmd BufRead,BufNewFile *.hbs set filetype=html
+  autocmd BufRead,BufNewFile *.liquid set filetype=yaml
   autocmd FileType sh setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType vim setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType scheme setlocal ts=2 sts=2 sw=2 expandtab
